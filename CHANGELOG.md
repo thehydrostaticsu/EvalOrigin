@@ -11,3 +11,8 @@ a Changelog, and the project uses semantic versioning.
 
 ## [1.0.2] - 2026-07-07
 
+### Fixed
+
+- The gate command reports a pack with zero cases as a usage error instead of
+  a pass.
+
