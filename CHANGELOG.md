@@ -21,3 +21,9 @@ a Changelog, and the project uses semantic versioning.
 ### Fixed
 
 - Gate exit codes distinguish "no gate declared" from "gate failed".
+
+## [1.0.0] - 2024-10-01
+
+### Added
+
+- Stable CLI contract for compile, cases, rubric, fixtures, gate, report, and
