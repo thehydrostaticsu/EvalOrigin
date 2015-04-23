@@ -27,3 +27,8 @@ a Changelog, and the project uses semantic versioning.
 ### Added
 
 - Stable CLI contract for compile, cases, rubric, fixtures, gate, report, and
+  inspect, exit codes 0/1/2.
+- Tests pin the compiled pack shape against the bundled fixtures.
+
+## [0.9.0] - 2023-08-15
+
