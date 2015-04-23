@@ -16,3 +16,8 @@ a Changelog, and the project uses semantic versioning.
 - The gate command reports a pack with zero cases as a usage error instead of
   a pass.
 
+## [1.0.1] - 2025-11-11
+
+### Fixed
+
+- Gate exit codes distinguish "no gate declared" from "gate failed".
