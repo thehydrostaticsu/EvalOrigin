@@ -42,3 +42,8 @@ a Changelog, and the project uses semantic versioning.
 
 - Fixture compilation from incident records.
 
+## [0.7.0] - 2021-06-08
+
+### Added
+
+- Rubric generation per failure class.
