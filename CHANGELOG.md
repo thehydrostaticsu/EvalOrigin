@@ -37,3 +37,8 @@ a Changelog, and the project uses semantic versioning.
 - Pack output: cases, rubrics, fixtures, and report in one directory.
 
 ## [0.8.0] - 2022-12-13
+
+### Added
+
+- Fixture compilation from incident records.
+
