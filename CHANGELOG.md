@@ -47,3 +47,8 @@ a Changelog, and the project uses semantic versioning.
 ### Added
 
 - Rubric generation per failure class.
+
+## [0.6.0] - 2020-10-13
+
+### Added
+
