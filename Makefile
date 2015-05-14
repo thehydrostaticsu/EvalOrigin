@@ -3,3 +3,6 @@
 PY ?= python
 IN ?= examples/fixtures/incidents.json examples/fixtures/traces.jsonl
 OUT ?= examples/output
+
+help:
+	@echo "EvalOrigin targets:"
