@@ -52,3 +52,8 @@ a Changelog, and the project uses semantic versioning.
 
 ### Added
 
+- Bundled example fixtures and captured output.
+- README walkthrough from a real compile run.
+
+## [0.5.0] - 2019-05-14
+
