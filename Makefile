@@ -6,3 +6,6 @@ OUT ?= examples/output
 
 help:
 	@echo "EvalOrigin targets:"
+	@echo "  make compile   - compile a full JSON pack to $(OUT)/pack.json"
+	@echo "  make report    - render a Markdown report to $(OUT)/report.md"
+	@echo "  make gate      - print the gate verdict (exit code encodes verdict)"
