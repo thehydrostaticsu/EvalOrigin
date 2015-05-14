@@ -67,3 +67,8 @@ a Changelog, and the project uses semantic versioning.
 ### Added
 
 - The Go evalgate binary and the gate package.
+
+## [0.3.0] - 2017-04-04
+
+### Added
+
