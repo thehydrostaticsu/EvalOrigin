@@ -62,3 +62,8 @@ a Changelog, and the project uses semantic versioning.
 - Report renderer with stable case ids.
 - CLI entry point with subcommands.
 
+## [0.4.0] - 2018-09-18
+
+### Added
+
+- The Go evalgate binary and the gate package.
