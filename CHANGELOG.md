@@ -57,3 +57,8 @@ a Changelog, and the project uses semantic versioning.
 
 ## [0.5.0] - 2019-05-14
 
+### Added
+
+- Report renderer with stable case ids.
+- CLI entry point with subcommands.
+
