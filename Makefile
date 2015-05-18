@@ -9,3 +9,6 @@ help:
 	@echo "  make compile   - compile a full JSON pack to $(OUT)/pack.json"
 	@echo "  make report    - render a Markdown report to $(OUT)/report.md"
 	@echo "  make gate      - print the gate verdict (exit code encodes verdict)"
+	@echo "  make cases     - emit regression cases"
+	@echo "  make rubric    - emit rubrics"
+	@echo "  make fixtures  - emit replay fixtures"
