@@ -22,3 +22,6 @@ compile:
 report:
 	$(PY) -m EvalOrigin report $(IN) --name demo -o $(OUT)/report.md
 
+gate:
+	$(PY) -m EvalOrigin gate $(IN)
+
