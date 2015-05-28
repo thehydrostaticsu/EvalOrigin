@@ -19,3 +19,6 @@ help:
 compile:
 	$(PY) -m EvalOrigin compile $(IN) --name demo -o $(OUT)/pack.json
 
+report:
+	$(PY) -m EvalOrigin report $(IN) --name demo -o $(OUT)/report.md
+
