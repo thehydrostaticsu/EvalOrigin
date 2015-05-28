@@ -12,3 +12,7 @@ help:
 	@echo "  make cases     - emit regression cases"
 	@echo "  make rubric    - emit rubrics"
 	@echo "  make fixtures  - emit replay fixtures"
+	@echo "  make inspect   - summarize inputs"
+	@echo "  make demo      - regenerate every artifact under $(OUT)"
+	@echo "  make check     - compile Python and build/vet the Go module"
+
