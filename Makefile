@@ -16,3 +16,6 @@ help:
 	@echo "  make demo      - regenerate every artifact under $(OUT)"
 	@echo "  make check     - compile Python and build/vet the Go module"
 
+compile:
+	$(PY) -m EvalOrigin compile $(IN) --name demo -o $(OUT)/pack.json
+
