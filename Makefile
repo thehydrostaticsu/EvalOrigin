@@ -25,3 +25,6 @@ report:
 gate:
 	$(PY) -m EvalOrigin gate $(IN)
 
+cases:
+	$(PY) -m EvalOrigin cases $(IN) -o $(OUT)/cases.json
+
