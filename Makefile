@@ -28,3 +28,6 @@ gate:
 cases:
 	$(PY) -m EvalOrigin cases $(IN) -o $(OUT)/cases.json
 
+rubric:
+	$(PY) -m EvalOrigin rubric $(IN) -o $(OUT)/rubrics.json
+
