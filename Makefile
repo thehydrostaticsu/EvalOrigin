@@ -31,3 +31,7 @@ cases:
 rubric:
 	$(PY) -m EvalOrigin rubric $(IN) -o $(OUT)/rubrics.json
 
+fixtures:
+	$(PY) -m EvalOrigin fixtures $(IN) -o $(OUT)/fixtures.json
+
+inspect:
