@@ -38,3 +38,6 @@ inspect:
 	$(PY) -m EvalOrigin inspect $(IN)
 
 demo: compile report cases rubric fixtures
+	@echo "Artifacts written to $(OUT)"
+
+go-build:
