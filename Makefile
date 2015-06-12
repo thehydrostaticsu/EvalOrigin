@@ -35,3 +35,6 @@ fixtures:
 	$(PY) -m EvalOrigin fixtures $(IN) -o $(OUT)/fixtures.json
 
 inspect:
+	$(PY) -m EvalOrigin inspect $(IN)
+
+demo: compile report cases rubric fixtures
