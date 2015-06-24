@@ -17,3 +17,9 @@ pipeline without a Python runtime.
 ## The pipeline
 
 Every stage is a pure function of its inputs. Identifiers are content-hashed,
+so re-running on the same traces reproduces the same pack.
+
+<p align="center">
+  <img src="docs/assets/pipeline.svg" alt="Traces and incidents compile into regression cases, then rubrics and fixtures, then a release gate that emits pass, warn, or block" width="720">
+</p>
+
