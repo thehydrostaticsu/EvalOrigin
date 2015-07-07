@@ -23,3 +23,10 @@ so re-running on the same traces reproduces the same pack.
   <img src="docs/assets/pipeline.svg" alt="Traces and incidents compile into regression cases, then rubrics and fixtures, then a release gate that emits pass, warn, or block" width="720">
 </p>
 
+```
+traces + incidents  ->  regression cases  ->  rubrics + fixtures  ->  gate  ->  pack
+```
+
+A failing trace becomes a regression case. Every incident becomes one too. A
+passing trace is pinned only when it carries a `golden` tag, so healthy paths
+enter the pack on purpose rather than by accident. Cases are sorted by severity,
