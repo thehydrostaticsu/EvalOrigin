@@ -30,3 +30,9 @@ traces + incidents  ->  regression cases  ->  rubrics + fixtures  ->  gate  ->  
 A failing trace becomes a regression case. Every incident becomes one too. A
 passing trace is pinned only when it carries a `golden` tag, so healthy paths
 enter the pack on purpose rather than by accident. Cases are sorted by severity,
+then entrypoint, then id, and de-duplicated by content hash.
+
+## What an operator does
+
+- Compile a full pack to JSON: `python -m evalorigin compile <inputs> --name demo -o pack.json`
+- Print the release verdict and let the exit code gate CI: `python -m evalorigin gate <inputs>`
