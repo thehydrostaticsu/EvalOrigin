@@ -43,3 +43,9 @@ then entrypoint, then id, and de-duplicated by content hash.
 Inputs are `.json` (a single object, an array, or a `{"traces": [...], "incidents": [...]}` wrapper)
 or `.jsonl` with one record per line. A record is read as an incident when it
 carries an `incident_id`, or a `severity` paired with a `title` or `trace`;
+otherwise it is parsed as a bare trace. The bundled fixtures live in
+`examples/fixtures/` (`traces.jsonl`, `incidents.json`) and a full set of
+compiled outputs sits in `examples/output/`.
+
+## The gate
+
