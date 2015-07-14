@@ -36,3 +36,10 @@ then entrypoint, then id, and de-duplicated by content hash.
 
 - Compile a full pack to JSON: `python -m evalorigin compile <inputs> --name demo -o pack.json`
 - Print the release verdict and let the exit code gate CI: `python -m evalorigin gate <inputs>`
+- Render a Markdown release report: `python -m evalorigin report <inputs> -o report.md`
+- Emit a single artifact type: `cases`, `rubric` (optionally `--entrypoint X`), or `fixtures`
+- Summarize inputs before committing to a compile: `python -m evalorigin inspect <inputs>`
+
+Inputs are `.json` (a single object, an array, or a `{"traces": [...], "incidents": [...]}` wrapper)
+or `.jsonl` with one record per line. A record is read as an incident when it
+carries an `incident_id`, or a `severity` paired with a `title` or `trace`;
