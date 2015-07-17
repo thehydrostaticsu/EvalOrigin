@@ -49,3 +49,9 @@ compiled outputs sits in `examples/output/`.
 
 ## The gate
 
+The verdict is `pass`, `warn`, or `block`, driven by an explainable score rather
+than an opaque heuristic, so the reasons print alongside it. Any case at a
+blocking severity forces a `block`. Otherwise a weighted risk score in `[0, 1]`
+is compared against two thresholds:
+
+| Verdict | Condition | Exit code |
