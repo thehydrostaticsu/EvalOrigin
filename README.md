@@ -55,3 +55,10 @@ blocking severity forces a `block`. Otherwise a weighted risk score in `[0, 1]`
 is compared against two thresholds:
 
 | Verdict | Condition | Exit code |
+|---------|-----------|-----------|
+| `pass`  | score below the warn threshold, no blocking cases | 0 |
+| `warn`  | score at or above the warn threshold (default 0.35) | 10 |
+| `block` | a blocking-severity case, or score at or above the block threshold (default 0.65) | 20 |
+
+Blocking severities and thresholds are configurable:
+
