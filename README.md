@@ -74,3 +74,10 @@ actually exercise. An output-equality check and an error-freedom check always
 exist. A step-budget check is added when cases record steps, and a severity
 guard is added when any case is `high` or `critical`. Weights are normalised so
 the criteria sum to `1.0`.
+
+## Run it
+
+Requires Python 3.11 or newer. The package has no dependencies.
+
+```bash
+python -m evalorigin compile examples/fixtures/incidents.json examples/fixtures/traces.jsonl \
