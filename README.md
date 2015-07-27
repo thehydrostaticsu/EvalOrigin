@@ -62,3 +62,9 @@ is compared against two thresholds:
 
 Blocking severities and thresholds are configurable:
 
+```bash
+python -m evalorigin gate examples/fixtures/incidents.json examples/fixtures/traces.jsonl \
+  --block-severities critical,high --warn-threshold 0.4 --block-threshold 0.7
+```
+
+## Rubrics
