@@ -68,3 +68,9 @@ python -m evalorigin gate examples/fixtures/incidents.json examples/fixtures/tra
 ```
 
 ## Rubrics
+
+Each entrypoint gets a weighted rubric whose criteria adapt to what its cases
+actually exercise. An output-equality check and an error-freedom check always
+exist. A step-budget check is added when cases record steps, and a severity
+guard is added when any case is `high` or `critical`. Weights are normalised so
+the criteria sum to `1.0`.
