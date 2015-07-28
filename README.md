@@ -81,3 +81,9 @@ Requires Python 3.11 or newer. The package has no dependencies.
 
 ```bash
 python -m evalorigin compile examples/fixtures/incidents.json examples/fixtures/traces.jsonl \
+  --name demo -o examples/output/pack.json
+
+python -m evalorigin report examples/fixtures/incidents.json examples/fixtures/traces.jsonl \
+  --name demo -o examples/output/report.md
+```
+
