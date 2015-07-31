@@ -87,3 +87,9 @@ python -m evalorigin report examples/fixtures/incidents.json examples/fixtures/t
   --name demo -o examples/output/report.md
 ```
 
+The `Makefile` wraps the common flows: `make compile`, `make report`, `make gate`,
+`make cases`, `make rubric`, `make fixtures`, `make inspect`, and `make demo` to
+regenerate every artifact under `examples/output/`. `make check` compiles the
+Python package and builds and vets the Go module.
+
+### Go gate at parity
