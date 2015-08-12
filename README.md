@@ -93,3 +93,10 @@ regenerate every artifact under `examples/output/`. `make check` compiles the
 Python package and builds and vets the Go module.
 
 ### Go gate at parity
+
+```bash
+cd compiler
+go build ./...
+```
+
+The `compiler/` module carries the gate logic and an `evalgate` command that
