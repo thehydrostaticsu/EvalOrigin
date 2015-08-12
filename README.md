@@ -100,3 +100,9 @@ go build ./...
 ```
 
 The `compiler/` module carries the gate logic and an `evalgate` command that
+mirrors the Python verdict, so the release decision can run inside a Go build.
+
+## Layout
+
+```
+evalorigin/
