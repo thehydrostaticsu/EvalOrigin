@@ -106,3 +106,10 @@ mirrors the Python verdict, so the release decision can run inside a Go build.
 
 ```
 evalorigin/
+├─ evalorigin/            Python package (stdlib only)
+│  ├─ model.py            dataclasses with deterministic to_dict
+│  ├─ loader.py           JSON / JSONL loaders, canonical serialization
+│  ├─ compiler.py         cases -> rubrics + fixtures -> gate -> pack
+│  ├─ gate.py             risk score and pass / warn / block verdict
+│  ├─ report.py           deterministic Markdown rendering
+│  └─ cli.py              argparse CLI and gate exit codes
