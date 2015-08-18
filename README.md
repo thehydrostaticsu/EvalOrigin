@@ -113,3 +113,22 @@ evalorigin/
 │  ├─ gate.py             risk score and pass / warn / block verdict
 │  ├─ report.py           deterministic Markdown rendering
 │  └─ cli.py              argparse CLI and gate exit codes
+├─ compiler/              Go module: gate at parity + evalgate command
+├─ examples/              fixtures/ inputs and output/ compiled artifacts
+├─ docs/assets/           logo.svg and pipeline.svg
+└─ pyproject.toml  Makefile  ROADMAP.md  CHANGELOG.md  LICENSE
+```
+
+## Determinism
+
+Serialized output is byte-stable across runs and machines. Collections are
+pre-sorted, keys are emitted in a fixed order, and no timestamps or random ids
+leak into a pack unless the input supplies them. That is what makes a pack safe
+to commit and diff: a changed pack means the traces changed, not the compiler.
+
+## License
+
+Apache-2.0. See [LICENSE](LICENSE). Milestones that are done live in
+[ROADMAP.md](ROADMAP.md); the change history is in [CHANGELOG.md](CHANGELOG.md).
+
+<!-- draft note 1 -->
