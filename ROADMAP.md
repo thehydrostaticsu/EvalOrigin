@@ -12,3 +12,4 @@ track the shape of the compiler and its companion runner.
 
 ## Exploring
 
+- Multi-pack diffing to surface newly introduced or resolved regressions.
