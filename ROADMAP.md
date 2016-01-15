@@ -10,3 +10,4 @@ track the shape of the compiler and its companion runner.
 - [x] JSON and Markdown pack outputs, including rubric and fixture generation
 - [x] Go companion `compiler/` module and `evalgate` command at gate parity
 
+## Exploring
