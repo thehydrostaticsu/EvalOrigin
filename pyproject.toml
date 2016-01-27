@@ -8,3 +8,5 @@ version = "1.0.2"
 description = "Trace-to-evaluation compiler: turn failures and execution traces into regression cases, rubrics, fixtures and release gates."
 readme = "README.md"
 requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+keywords = ["evaluation", "regression", "release-gate", "traces", "rubric", "fixtures"]
