@@ -12,3 +12,5 @@ license = { text = "Apache-2.0" }
 keywords = ["evaluation", "regression", "release-gate", "traces", "rubric", "fixtures"]
 authors = [{ name = "EvalOrigin" }]
 classifiers = [
+  "Programming Language :: Python :: 3.11",
+  "License :: OSI Approved :: Apache Software License",
