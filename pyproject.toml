@@ -21,3 +21,5 @@ dependencies = []
 
 [project.scripts]
 evalorigin = "evalorigin.cli:main"
+
+[project.urls]
