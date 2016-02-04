@@ -16,3 +16,5 @@ classifiers = [
   "License :: OSI Approved :: Apache Software License",
   "Environment :: Console",
   "Topic :: Software Development :: Quality Assurance",
+]
+dependencies = []
