@@ -19,3 +19,5 @@ classifiers = [
 ]
 dependencies = []
 
+[project.scripts]
+evalorigin = "evalorigin.cli:main"
