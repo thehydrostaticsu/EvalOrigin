@@ -17,3 +17,7 @@ from pathlib import Path
 from typing import Iterable, List, Tuple
 
 from .model import Incident, Trace
+
+
+def _iter_records(path: Path) -> Iterable[dict]:
+    text = path.read_text(encoding="utf-8")
