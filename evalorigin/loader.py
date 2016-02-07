@@ -13,3 +13,7 @@ or a ``severity``/``title`` pair; otherwise it is parsed as a bare
 from __future__ import annotations
 
 import json
+from pathlib import Path
+from typing import Iterable, List, Tuple
+
+from .model import Incident, Trace
