@@ -9,3 +9,7 @@ A record is routed to an :class:`Incident` when it carries an ``incident_id``
 or a ``severity``/``title`` pair; otherwise it is parsed as a bare
 :class:`Trace`.
 """
+
+from __future__ import annotations
+
+import json
