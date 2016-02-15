@@ -21,3 +21,7 @@ from .model import Incident, Trace
 
 def _iter_records(path: Path) -> Iterable[dict]:
     text = path.read_text(encoding="utf-8")
+    if path.suffix.lower() == ".jsonl":
+        for line in text.splitlines():
+            line = line.strip()
+            if not line:
