@@ -38,3 +38,7 @@ def _iter_records(path: Path) -> Iterable[dict]:
             yield from data.get("incidents", []) or []
         else:
             yield data
+    else:
+        raise ValueError(f"unsupported JSON root type in {path}: {type(data).__name__}")
+
+
