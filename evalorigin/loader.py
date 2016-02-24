@@ -42,3 +42,7 @@ def _iter_records(path: Path) -> Iterable[dict]:
         raise ValueError(f"unsupported JSON root type in {path}: {type(data).__name__}")
 
 
+def _is_incident(record: dict) -> bool:
+    if "incident_id" in record:
+        return True
+    return "severity" in record and ("title" in record or "trace" in record)
