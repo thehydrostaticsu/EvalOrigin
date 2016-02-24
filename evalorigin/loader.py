@@ -25,3 +25,8 @@ def _iter_records(path: Path) -> Iterable[dict]:
         for line in text.splitlines():
             line = line.strip()
             if not line:
+                continue
+            yield json.loads(line)
+        return
+    data = json.loads(text)
+    if isinstance(data, list):
