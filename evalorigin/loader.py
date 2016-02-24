@@ -30,3 +30,7 @@ def _iter_records(path: Path) -> Iterable[dict]:
         return
     data = json.loads(text)
     if isinstance(data, list):
+        yield from data
+    elif isinstance(data, dict):
+        # Allow a wrapper object with "traces"/"incidents" arrays.
+        if "traces" in data or "incidents" in data:
