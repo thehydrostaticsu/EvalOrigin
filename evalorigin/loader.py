@@ -34,3 +34,7 @@ def _iter_records(path: Path) -> Iterable[dict]:
     elif isinstance(data, dict):
         # Allow a wrapper object with "traces"/"incidents" arrays.
         if "traces" in data or "incidents" in data:
+            yield from data.get("traces", []) or []
+            yield from data.get("incidents", []) or []
+        else:
+            yield data
