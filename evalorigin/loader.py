@@ -50,3 +50,8 @@ def _is_incident(record: dict) -> bool:
 
 def load_sources(paths: Iterable[str]) -> Tuple[List[Trace], List[Incident]]:
     """Load traces and incidents from the given file paths."""
+    traces: List[Trace] = []
+    incidents: List[Incident] = []
+    for raw_path in paths:
+        path = Path(raw_path)
+        if not path.exists():
