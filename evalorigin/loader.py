@@ -46,3 +46,7 @@ def _is_incident(record: dict) -> bool:
     if "incident_id" in record:
         return True
     return "severity" in record and ("title" in record or "trace" in record)
+
+
+def load_sources(paths: Iterable[str]) -> Tuple[List[Trace], List[Incident]]:
+    """Load traces and incidents from the given file paths."""
