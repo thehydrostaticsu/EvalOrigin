@@ -55,3 +55,7 @@ def load_sources(paths: Iterable[str]) -> Tuple[List[Trace], List[Incident]]:
     for raw_path in paths:
         path = Path(raw_path)
         if not path.exists():
+            raise FileNotFoundError(f"input not found: {path}")
+        for record in _iter_records(path):
+            if not isinstance(record, dict):
+                raise ValueError(f"expected object record, got {type(record).__name__}")
