@@ -23,3 +23,14 @@ def stable_id(*parts: str) -> str:
 @dataclass(frozen=True)
 class TraceStep:
     """A single observed step inside an execution trace."""
+
+    index: int
+    op: str
+    input: Any = None
+    output: Any = None
+    status: str = "ok"
+    detail: str = ""
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "index": self.index,
