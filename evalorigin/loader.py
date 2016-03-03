@@ -59,3 +59,12 @@ def load_sources(paths: Iterable[str]) -> Tuple[List[Trace], List[Incident]]:
         for record in _iter_records(path):
             if not isinstance(record, dict):
                 raise ValueError(f"expected object record, got {type(record).__name__}")
+            if _is_incident(record):
+                incidents.append(Incident.from_dict(record))
+            else:
+                traces.append(Trace.from_dict(record))
+    return traces, incidents
+
+
+def dumps_canonical(obj: object) -> str:
+    """Serialize to canonical, deterministic JSON."""
