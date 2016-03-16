@@ -34,3 +34,14 @@ class TraceStep:
     def to_dict(self) -> Dict[str, Any]:
         return {
             "index": self.index,
+            "op": self.op,
+            "input": self.input,
+            "output": self.output,
+            "status": self.status,
+            "detail": self.detail,
+        }
+
+    @classmethod
+    def from_dict(cls, raw: Dict[str, Any], fallback_index: int) -> "TraceStep":
+        return cls(
+            index=int(raw.get("index", fallback_index)),
