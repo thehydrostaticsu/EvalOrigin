@@ -45,3 +45,14 @@ class TraceStep:
     def from_dict(cls, raw: Dict[str, Any], fallback_index: int) -> "TraceStep":
         return cls(
             index=int(raw.get("index", fallback_index)),
+            op=str(raw.get("op", "step")),
+            input=raw.get("input"),
+            output=raw.get("output"),
+            status=str(raw.get("status", "ok")),
+            detail=str(raw.get("detail", "")),
+        )
+
+
+@dataclass(frozen=True)
+class Trace:
+    """An ordered execution trace with an outcome."""
