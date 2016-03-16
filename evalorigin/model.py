@@ -56,3 +56,15 @@ class TraceStep:
 @dataclass(frozen=True)
 class Trace:
     """An ordered execution trace with an outcome."""
+
+    trace_id: str
+    entrypoint: str
+    outcome: str
+    steps: List[TraceStep] = field(default_factory=list)
+    tags: List[str] = field(default_factory=list)
+    expected: Any = None
+    actual: Any = None
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "trace_id": self.trace_id,
