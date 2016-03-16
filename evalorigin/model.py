@@ -68,3 +68,14 @@ class Trace:
     def to_dict(self) -> Dict[str, Any]:
         return {
             "trace_id": self.trace_id,
+            "entrypoint": self.entrypoint,
+            "outcome": self.outcome,
+            "tags": sorted(self.tags),
+            "expected": self.expected,
+            "actual": self.actual,
+            "steps": [s.to_dict() for s in self.steps],
+        }
+
+    @classmethod
+    def from_dict(cls, raw: Dict[str, Any]) -> "Trace":
+        steps_raw = raw.get("steps", []) or []
