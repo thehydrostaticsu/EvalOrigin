@@ -79,3 +79,14 @@ class Trace:
     @classmethod
     def from_dict(cls, raw: Dict[str, Any]) -> "Trace":
         steps_raw = raw.get("steps", []) or []
+        steps = [TraceStep.from_dict(s, i) for i, s in enumerate(steps_raw)]
+        steps.sort(key=lambda s: s.index)
+        return cls(
+            trace_id=str(raw.get("trace_id") or raw.get("id") or "trace"),
+            entrypoint=str(raw.get("entrypoint", "unknown")),
+            outcome=str(raw.get("outcome", "unknown")),
+            steps=steps,
+            tags=list(raw.get("tags", []) or []),
+            expected=raw.get("expected"),
+            actual=raw.get("actual"),
+        )
