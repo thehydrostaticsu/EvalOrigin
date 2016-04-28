@@ -112,3 +112,14 @@ class Incident:
         return {
             "incident_id": self.incident_id,
             "title": self.title,
+            "severity": self.severity,
+            "entrypoint": self.entrypoint,
+            "signature": self.signature,
+            "notes": self.notes,
+            "trace": self.trace.to_dict(),
+        }
+
+    @classmethod
+    def from_dict(cls, raw: Dict[str, Any]) -> "Incident":
+        trace = Trace.from_dict(raw.get("trace", {}) or {})
+        return cls(
