@@ -90,3 +90,14 @@ class Trace:
             expected=raw.get("expected"),
             actual=raw.get("actual"),
         )
+
+    @property
+    def failing_steps(self) -> List[TraceStep]:
+        return [s for s in self.steps if s.status.lower() in ("error", "fail", "failed")]
+
+
+@dataclass(frozen=True)
+class Incident:
+    """A production or CI failure that seeds regression coverage."""
+
+    incident_id: str
