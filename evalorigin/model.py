@@ -101,3 +101,14 @@ class Incident:
     """A production or CI failure that seeds regression coverage."""
 
     incident_id: str
+    title: str
+    severity: str
+    entrypoint: str
+    trace: Trace
+    signature: str = ""
+    notes: str = ""
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "incident_id": self.incident_id,
+            "title": self.title,
