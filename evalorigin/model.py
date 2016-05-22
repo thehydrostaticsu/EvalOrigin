@@ -123,3 +123,14 @@ class Incident:
     def from_dict(cls, raw: Dict[str, Any]) -> "Incident":
         trace = Trace.from_dict(raw.get("trace", {}) or {})
         return cls(
+            incident_id=str(raw.get("incident_id") or raw.get("id") or "incident"),
+            title=str(raw.get("title", "untitled incident")),
+            severity=str(raw.get("severity", "medium")).lower(),
+            entrypoint=str(raw.get("entrypoint") or trace.entrypoint),
+            trace=trace,
+            signature=str(raw.get("signature", "")),
+            notes=str(raw.get("notes", "")),
+        )
+
+
+@dataclass(frozen=True)
