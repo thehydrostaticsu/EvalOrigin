@@ -134,3 +134,14 @@ class Incident:
 
 
 @dataclass(frozen=True)
+class RegressionCase:
+    """A deterministic regression case compiled from a trace."""
+
+    case_id: str
+    entrypoint: str
+    given: Any
+    expect: Any
+    origin: str
+    severity: str
+    steps: int
+
