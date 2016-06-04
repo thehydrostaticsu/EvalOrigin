@@ -145,3 +145,14 @@ class RegressionCase:
     severity: str
     steps: int
 
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "case_id": self.case_id,
+            "entrypoint": self.entrypoint,
+            "given": self.given,
+            "expect": self.expect,
+            "origin": self.origin,
+            "severity": self.severity,
+            "steps": self.steps,
+        }
+
