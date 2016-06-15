@@ -156,3 +156,14 @@ class RegressionCase:
             "steps": self.steps,
         }
 
+
+@dataclass(frozen=True)
+class RubricCriterion:
+    """A single weighted criterion in a scoring rubric."""
+
+    key: str
+    description: str
+    weight: float
+    check: str
+
+    def to_dict(self) -> Dict[str, Any]:
