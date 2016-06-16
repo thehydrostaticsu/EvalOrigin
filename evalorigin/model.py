@@ -167,3 +167,14 @@ class RubricCriterion:
     check: str
 
     def to_dict(self) -> Dict[str, Any]:
+        return {
+            "key": self.key,
+            "description": self.description,
+            "weight": round(self.weight, 4),
+            "check": self.check,
+        }
+
+
+@dataclass(frozen=True)
+class Rubric:
+    """A weighted rubric used to score candidate fixes against a case."""
