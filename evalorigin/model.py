@@ -178,3 +178,15 @@ class RubricCriterion:
 @dataclass(frozen=True)
 class Rubric:
     """A weighted rubric used to score candidate fixes against a case."""
+
+    rubric_id: str
+    entrypoint: str
+    criteria: List[RubricCriterion] = field(default_factory=list)
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "rubric_id": self.rubric_id,
+            "entrypoint": self.entrypoint,
+            "criteria": [c.to_dict() for c in self.criteria],
+            "total_weight": round(sum(c.weight for c in self.criteria), 4),
+        }
