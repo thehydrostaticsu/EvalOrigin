@@ -190,3 +190,14 @@ class Rubric:
             "criteria": [c.to_dict() for c in self.criteria],
             "total_weight": round(sum(c.weight for c in self.criteria), 4),
         }
+
+
+@dataclass(frozen=True)
+class Fixture:
+    """A replay fixture pinning inputs and expected outputs."""
+
+    fixture_id: str
+    case_id: str
+    entrypoint: str
+    payload: Any
+    expect: Any
