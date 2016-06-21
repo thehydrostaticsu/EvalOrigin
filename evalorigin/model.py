@@ -212,3 +212,14 @@ class Fixture:
         }
 
 
+@dataclass(frozen=True)
+class GateSummary:
+    """The release-gate verdict for a compiled pack."""
+
+    verdict: str
+    score: float
+    total_cases: int
+    blocking_cases: int
+    by_severity: Dict[str, int]
+    reasons: List[str] = field(default_factory=list)
+
