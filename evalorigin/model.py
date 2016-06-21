@@ -201,3 +201,14 @@ class Fixture:
     entrypoint: str
     payload: Any
     expect: Any
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "fixture_id": self.fixture_id,
+            "case_id": self.case_id,
+            "entrypoint": self.entrypoint,
+            "payload": self.payload,
+            "expect": self.expect,
+        }
+
+
