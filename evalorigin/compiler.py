@@ -17,3 +17,15 @@ from .gate import GateConfig, evaluate_gate
 from .model import (
     Fixture,
     Incident,
+    Pack,
+    RegressionCase,
+    Rubric,
+    RubricCriterion,
+    Trace,
+    stable_id,
+)
+
+# Severity ordering used to sort and to seed default rubric weights.
+SEVERITY_RANK = {"critical": 4, "high": 3, "medium": 2, "low": 1, "info": 0}
+
+
