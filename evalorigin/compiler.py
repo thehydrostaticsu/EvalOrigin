@@ -29,3 +29,14 @@ from .model import (
 SEVERITY_RANK = {"critical": 4, "high": 3, "medium": 2, "low": 1, "info": 0}
 
 
+def _case_from_trace(trace: Trace, origin: str, severity: str) -> RegressionCase:
+    """Derive a single regression case from a trace.
+
+    ``given`` is the entry input (first step input, or the trace expected/actual
+    envelope). ``expect`` prefers the declared expected value; when absent it
+    falls back to the last successful output before failure.
+    """
+    given = None
+    if trace.steps:
+        given = trace.steps[0].input
+    if given is None:
