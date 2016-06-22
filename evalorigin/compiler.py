@@ -40,3 +40,15 @@ def _case_from_trace(trace: Trace, origin: str, severity: str) -> RegressionCase
     if trace.steps:
         given = trace.steps[0].input
     if given is None:
+        given = trace.expected if trace.expected is not None else trace.actual
+
+    expect = trace.expected
+    if expect is None:
+        good = [s for s in trace.steps if s.status.lower() == "ok"]
+        if good:
+            expect = good[-1].output
+
+    case_id = "case-" + stable_id(trace.trace_id, trace.entrypoint, origin)
+    return RegressionCase(
+        case_id=case_id,
+        entrypoint=trace.entrypoint,
