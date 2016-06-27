@@ -52,3 +52,14 @@ def _case_from_trace(trace: Trace, origin: str, severity: str) -> RegressionCase
     return RegressionCase(
         case_id=case_id,
         entrypoint=trace.entrypoint,
+        given=given,
+        expect=expect,
+        origin=origin,
+        severity=severity,
+        steps=len(trace.steps),
+    )
+
+
+def compile_cases(
+    traces: Iterable[Trace],
+    incidents: Iterable[Incident],
