@@ -75,3 +75,14 @@ def compile_cases(
         is_fail = trace.outcome.lower() in ("fail", "failed", "error") or trace.failing_steps
         is_golden = "golden" in {t.lower() for t in trace.tags}
         if is_fail:
+            cases.append(_case_from_trace(trace, origin="trace-failure", severity="high"))
+        elif is_golden:
+            cases.append(_case_from_trace(trace, origin="golden-path", severity="medium"))
+
+    for incident in incidents:
+        cases.append(
+            _case_from_trace(
+                incident.trace,
+                origin=f"incident:{incident.incident_id}",
+                severity=incident.severity,
+            )
