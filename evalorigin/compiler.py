@@ -97,3 +97,15 @@ def compile_cases(
     for c in cases:
         seen.setdefault(c.case_id, c)
     return list(seen.values())
+
+
+def compile_rubric(entrypoint: str, cases: List[RegressionCase]) -> Rubric:
+    """Build a weighted rubric for one entrypoint.
+
+    Weights are normalised so the criteria sum to 1.0. The criteria set adapts
+    to what the cases actually exercise: an output-equality check always
+    exists; error-freedom and step-budget checks are added when the cases
+    carry the relevant signals.
+    """
+    scoped = [c for c in cases if c.entrypoint == entrypoint]
+    criteria: List[RubricCriterion] = [
