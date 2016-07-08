@@ -86,3 +86,14 @@ def compile_cases(
                 origin=f"incident:{incident.incident_id}",
                 severity=incident.severity,
             )
+        )
+
+    # Deterministic order: severity desc, then entrypoint, then case_id.
+    cases.sort(
+        key=lambda c: (-SEVERITY_RANK.get(c.severity, 0), c.entrypoint, c.case_id)
+    )
+    # De-duplicate identical case ids while preserving order.
+    seen: Dict[str, RegressionCase] = {}
+    for c in cases:
+        seen.setdefault(c.case_id, c)
+    return list(seen.values())
