@@ -63,3 +63,15 @@ def _case_from_trace(trace: Trace, origin: str, severity: str) -> RegressionCase
 def compile_cases(
     traces: Iterable[Trace],
     incidents: Iterable[Incident],
+) -> List[RegressionCase]:
+    """Compile regression cases from raw traces and incidents.
+
+    Failing traces and every incident become cases. Passing traces are kept
+    only when tagged ``golden`` so healthy paths can be pinned intentionally.
+    """
+    cases: List[RegressionCase] = []
+
+    for trace in traces:
+        is_fail = trace.outcome.lower() in ("fail", "failed", "error") or trace.failing_steps
+        is_golden = "golden" in {t.lower() for t in trace.tags}
+        if is_fail:
