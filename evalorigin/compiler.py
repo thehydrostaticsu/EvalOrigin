@@ -109,3 +109,14 @@ def compile_rubric(entrypoint: str, cases: List[RegressionCase]) -> Rubric:
     """
     scoped = [c for c in cases if c.entrypoint == entrypoint]
     criteria: List[RubricCriterion] = [
+        RubricCriterion(
+            key="output_matches",
+            description="Candidate output equals the pinned expectation.",
+            weight=3.0,
+            check="equals(expect)",
+        ),
+        RubricCriterion(
+            key="no_error_status",
+            description="No step reports an error or failed status.",
+            weight=2.0,
+            check="all_steps_ok",
