@@ -120,3 +120,15 @@ def compile_rubric(entrypoint: str, cases: List[RegressionCase]) -> Rubric:
             description="No step reports an error or failed status.",
             weight=2.0,
             check="all_steps_ok",
+        ),
+    ]
+    if any(c.steps > 0 for c in scoped):
+        max_steps = max((c.steps for c in scoped), default=0)
+        criteria.append(
+            RubricCriterion(
+                key="within_step_budget",
+                description=f"Execution completes within {max_steps} recorded steps.",
+                weight=1.0,
+                check=f"steps<={max_steps}",
+            )
+        )
