@@ -132,3 +132,14 @@ def compile_rubric(entrypoint: str, cases: List[RegressionCase]) -> Rubric:
                 check=f"steps<={max_steps}",
             )
         )
+    if any(c.severity in ("critical", "high") for c in scoped):
+        criteria.append(
+            RubricCriterion(
+                key="severity_guard",
+                description="High/critical origin cases must pass without waivers.",
+                weight=2.0,
+                check="no_waiver_on_high",
+            )
+        )
+
+    total = sum(c.weight for c in criteria) or 1.0
