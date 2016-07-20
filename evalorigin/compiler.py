@@ -143,3 +143,15 @@ def compile_rubric(entrypoint: str, cases: List[RegressionCase]) -> Rubric:
         )
 
     total = sum(c.weight for c in criteria) or 1.0
+    normalised = [
+        RubricCriterion(c.key, c.description, c.weight / total, c.check)
+        for c in criteria
+    ]
+    rubric_id = "rubric-" + stable_id(entrypoint, *[c.key for c in normalised])
+    return Rubric(rubric_id=rubric_id, entrypoint=entrypoint, criteria=normalised)
+
+
+def compile_fixtures(cases: List[RegressionCase]) -> List[Fixture]:
+    """Produce a replay fixture per case, pinning payload and expectation."""
+    fixtures: List[Fixture] = []
+    for c in cases:
