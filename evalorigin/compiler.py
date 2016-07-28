@@ -155,3 +155,14 @@ def compile_fixtures(cases: List[RegressionCase]) -> List[Fixture]:
     """Produce a replay fixture per case, pinning payload and expectation."""
     fixtures: List[Fixture] = []
     for c in cases:
+        fixture_id = "fx-" + stable_id(c.case_id, c.entrypoint)
+        fixtures.append(
+            Fixture(
+                fixture_id=fixture_id,
+                case_id=c.case_id,
+                entrypoint=c.entrypoint,
+                payload=c.given,
+                expect=c.expect,
+            )
+        )
+    fixtures.sort(key=lambda f: f.fixture_id)
