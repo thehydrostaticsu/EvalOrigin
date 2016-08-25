@@ -11,3 +11,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Dict, List
 
+from .model import GateSummary, RegressionCase
+
+_SEVERITY_WEIGHT = {"critical": 1.0, "high": 0.7, "medium": 0.4, "low": 0.2, "info": 0.05}
+
+
