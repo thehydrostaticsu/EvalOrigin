@@ -33,3 +33,9 @@ class GateConfig:
 def _risk_score(cases: List[RegressionCase]) -> float:
     if not cases:
         return 0.0
+    total = sum(_SEVERITY_WEIGHT.get(c.severity, 0.3) for c in cases)
+    return min(1.0, total / len(cases))
+
+
+def evaluate_gate(cases: List[RegressionCase], config: GateConfig) -> GateSummary:
+    """Compute the gate verdict for a set of regression cases."""
