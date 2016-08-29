@@ -16,3 +16,9 @@ from .model import GateSummary, RegressionCase
 _SEVERITY_WEIGHT = {"critical": 1.0, "high": 0.7, "medium": 0.4, "low": 0.2, "info": 0.05}
 
 
+@dataclass(frozen=True)
+class GateConfig:
+    """Thresholds that control the gate verdict.
+
+    ``block_severities`` lists severities whose presence forces a ``block``.
+    ``warn_threshold`` and ``block_threshold`` compare against the weighted
