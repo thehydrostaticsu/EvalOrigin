@@ -28,3 +28,8 @@ class GateConfig:
     block_severities: tuple[str, ...] = ("critical",)
     warn_threshold: float = 0.35
     block_threshold: float = 0.65
+
+
+def _risk_score(cases: List[RegressionCase]) -> float:
+    if not cases:
+        return 0.0
