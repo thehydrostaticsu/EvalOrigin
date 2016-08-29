@@ -22,3 +22,9 @@ class GateConfig:
 
     ``block_severities`` lists severities whose presence forces a ``block``.
     ``warn_threshold`` and ``block_threshold`` compare against the weighted
+    risk score, a value in ``[0, 1]`` where higher means riskier.
+    """
+
+    block_severities: tuple[str, ...] = ("critical",)
+    warn_threshold: float = 0.35
+    block_threshold: float = 0.65
