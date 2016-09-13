@@ -45,3 +45,8 @@ def evaluate_gate(cases: List[RegressionCase], config: GateConfig) -> GateSummar
 
     score = _risk_score(cases)
     reasons: List[str] = []
+
+    blocking = sum(by_severity.get(s, 0) for s in config.block_severities)
+    verdict = "pass"
+
+    if blocking > 0:
