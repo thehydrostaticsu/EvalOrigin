@@ -39,3 +39,9 @@ def _risk_score(cases: List[RegressionCase]) -> float:
 
 def evaluate_gate(cases: List[RegressionCase], config: GateConfig) -> GateSummary:
     """Compute the gate verdict for a set of regression cases."""
+    by_severity: Dict[str, int] = {}
+    for c in cases:
+        by_severity[c.severity] = by_severity.get(c.severity, 0) + 1
+
+    score = _risk_score(cases)
+    reasons: List[str] = []
