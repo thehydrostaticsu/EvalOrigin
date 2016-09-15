@@ -50,3 +50,9 @@ def evaluate_gate(cases: List[RegressionCase], config: GateConfig) -> GateSummar
     verdict = "pass"
 
     if blocking > 0:
+        verdict = "block"
+        reasons.append(
+            f"{blocking} case(s) at blocking severity {sorted(config.block_severities)}"
+        )
+    elif score >= config.block_threshold:
+        verdict = "block"
