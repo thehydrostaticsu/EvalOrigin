@@ -56,3 +56,9 @@ def evaluate_gate(cases: List[RegressionCase], config: GateConfig) -> GateSummar
         )
     elif score >= config.block_threshold:
         verdict = "block"
+        reasons.append(f"risk score {score:.2f} >= block threshold {config.block_threshold}")
+    elif score >= config.warn_threshold:
+        verdict = "warn"
+        reasons.append(f"risk score {score:.2f} >= warn threshold {config.warn_threshold}")
+    else:
+        reasons.append(f"risk score {score:.2f} below warn threshold {config.warn_threshold}")
