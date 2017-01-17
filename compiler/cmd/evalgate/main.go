@@ -32,3 +32,15 @@ func readInput(path string) ([]byte, error) {
 	return os.ReadFile(path)
 }
 
+func parseCases(data []byte) ([]gate.Case, error) {
+	trimmed := strings.TrimSpace(string(data))
+	if trimmed == "" {
+		return nil, fmt.Errorf("empty input")
+	}
+	if strings.HasPrefix(trimmed, "[") {
+		var cases []gate.Case
+		if err := json.Unmarshal(data, &cases); err != nil {
+			return nil, err
+		}
+		return cases, nil
+	}
