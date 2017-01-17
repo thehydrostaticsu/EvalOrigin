@@ -20,3 +20,15 @@ import (
 
 	"evalorigin/compiler/gate"
 )
+
+type packEnvelope struct {
+	Cases []gate.Case `json:"cases"`
+}
+
+func readInput(path string) ([]byte, error) {
+	if path == "" || path == "-" {
+		return io.ReadAll(os.Stdin)
+	}
+	return os.ReadFile(path)
+}
+
