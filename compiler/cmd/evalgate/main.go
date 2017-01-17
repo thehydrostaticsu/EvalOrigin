@@ -8,3 +8,15 @@
 //
 //	evalgate [--in cases.json] [--block-severities critical,high]
 //	         [--warn 0.35] [--block 0.65]
+package main
+
+import (
+	"encoding/json"
+	"flag"
+	"fmt"
+	"io"
+	"os"
+	"strings"
+
+	"evalorigin/compiler/gate"
+)
