@@ -44,3 +44,14 @@ func parseCases(data []byte) ([]gate.Case, error) {
 		}
 		return cases, nil
 	}
+	var env packEnvelope
+	if err := json.Unmarshal(data, &env); err != nil {
+		return nil, err
+	}
+	return env.Cases, nil
+}
+
+func main() {
+	in := flag.String("in", "-", "input file (JSON array of cases or a pack); '-' for stdin")
+	blockSev := flag.String("block-severities", "critical", "comma list of blocking severities")
+	warn := flag.Float64("warn", 0.35, "warn threshold")
