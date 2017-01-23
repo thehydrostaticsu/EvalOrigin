@@ -67,3 +67,15 @@ func main() {
 	cases, err := parseCases(data)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, "parse error:", err)
+		os.Exit(2)
+	}
+
+	sevs := []string{}
+	for _, s := range strings.Split(*blockSev, ",") {
+		s = strings.TrimSpace(strings.ToLower(s))
+		if s != "" {
+			sevs = append(sevs, s)
+		}
+	}
+	if len(sevs) == 0 {
+		sevs = []string{"critical"}
