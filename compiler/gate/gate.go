@@ -23,3 +23,16 @@ type Case struct {
 	Entrypoint string `json:"entrypoint"`
 	Severity   string `json:"severity"`
 	Steps      int    `json:"steps"`
+}
+
+// Config holds the thresholds that drive the verdict.
+type Config struct {
+	BlockSeverities []string
+	WarnThreshold   float64
+	BlockThreshold  float64
+}
+
+// DefaultConfig returns the same defaults as the Python GateConfig.
+func DefaultConfig() Config {
+	return Config{
+		BlockSeverities: []string{"critical"},
