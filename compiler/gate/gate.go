@@ -36,3 +36,16 @@ type Config struct {
 func DefaultConfig() Config {
 	return Config{
 		BlockSeverities: []string{"critical"},
+		WarnThreshold:   0.35,
+		BlockThreshold:  0.65,
+	}
+}
+
+// Summary is the gate verdict for a set of cases.
+type Summary struct {
+	Verdict       string         `json:"verdict"`
+	Score         float64        `json:"score"`
+	TotalCases    int            `json:"total_cases"`
+	BlockingCases int            `json:"blocking_cases"`
+	BySeverity    map[string]int `json:"by_severity"`
+	Reasons       []string       `json:"reasons"`
