@@ -49,3 +49,16 @@ type Summary struct {
 	BlockingCases int            `json:"blocking_cases"`
 	BySeverity    map[string]int `json:"by_severity"`
 	Reasons       []string       `json:"reasons"`
+}
+
+func riskScore(cases []Case) float64 {
+	if len(cases) == 0 {
+		return 0.0
+	}
+	total := 0.0
+	for _, c := range cases {
+		w, ok := SeverityWeight[c.Severity]
+		if !ok {
+			w = 0.3
+		}
+		total += w
