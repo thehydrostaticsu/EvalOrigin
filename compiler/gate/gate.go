@@ -88,3 +88,16 @@ func Evaluate(cases []Case, cfg Config) Summary {
 
 	score := riskScore(cases)
 	reasons := []string{}
+
+	blocking := 0
+	for _, s := range cfg.BlockSeverities {
+		blocking += bySeverity[s]
+	}
+
+	verdict := "pass"
+	switch {
+	case blocking > 0:
+		verdict = "block"
+		sorted := append([]string{}, cfg.BlockSeverities...)
+		sort.Strings(sorted)
+		reasons = append(reasons, fmt.Sprintf("%d case(s) at blocking severity %v", blocking, sorted))
