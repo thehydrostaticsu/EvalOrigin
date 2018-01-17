@@ -62,3 +62,16 @@ func riskScore(cases []Case) float64 {
 			w = 0.3
 		}
 		total += w
+	}
+	s := total / float64(len(cases))
+	if s > 1.0 {
+		s = 1.0
+	}
+	return s
+}
+
+func contains(list []string, target string) bool {
+	for _, v := range list {
+		if v == target {
+			return true
+		}
