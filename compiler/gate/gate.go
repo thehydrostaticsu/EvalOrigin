@@ -75,3 +75,16 @@ func contains(list []string, target string) bool {
 		if v == target {
 			return true
 		}
+	}
+	return false
+}
+
+// Evaluate computes the gate verdict for the given cases and config.
+func Evaluate(cases []Case, cfg Config) Summary {
+	bySeverity := map[string]int{}
+	for _, c := range cases {
+		bySeverity[c.Severity]++
+	}
+
+	score := riskScore(cases)
+	reasons := []string{}
