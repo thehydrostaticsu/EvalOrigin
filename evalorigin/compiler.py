@@ -166,3 +166,30 @@ def compile_fixtures(cases: List[RegressionCase]) -> List[Fixture]:
             )
         )
     fixtures.sort(key=lambda f: f.fixture_id)
+    return fixtures
+
+
+def compile_pack(
+    traces: Iterable[Trace],
+    incidents: Iterable[Incident],
+    pack_name: str = "pack",
+    gate_config: GateConfig | None = None,
+) -> Pack:
+    """Run the full pipeline and return a complete :class:`Pack`."""
+    traces = list(traces)
+    incidents = list(incidents)
+
+    cases = compile_cases(traces, incidents)
+    entrypoints = sorted({c.entrypoint for c in cases})
+    rubrics = [compile_rubric(ep, cases) for ep in entrypoints]
+    fixtures = compile_fixtures(cases)
+    gate = evaluate_gate(cases, gate_config or GateConfig())
+
+    pack_id = "pack-" + stable_id(pack_name, *[c.case_id for c in cases])
+    return Pack(
+        pack_id=pack_id,
+        entrypoints=entrypoints,
+        cases=cases,
+        rubrics=rubrics,
+        fixtures=fixtures,
+        gate=gate,
