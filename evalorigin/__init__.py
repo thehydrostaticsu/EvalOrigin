@@ -14,3 +14,8 @@ from .model import (
     TraceStep,
     Incident,
     RegressionCase,
+    Rubric,
+    RubricCriterion,
+    Fixture,
+    GateSummary,
+    Pack,
