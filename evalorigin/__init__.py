@@ -8,3 +8,9 @@ The package is dependency-free and targets Python 3.11+. The heavy scoring
 kernel is mirrored by a companion Go module under ``compiler/`` for teams
 that embed the gate directly in CI runners.
 """
+
+from .model import (
+    Trace,
+    TraceStep,
+    Incident,
+    RegressionCase,
