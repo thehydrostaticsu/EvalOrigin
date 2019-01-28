@@ -19,3 +19,9 @@ from .model import (
     Fixture,
     GateSummary,
     Pack,
+)
+from .compiler import compile_pack, compile_cases, compile_rubric
+from .gate import evaluate_gate, GateConfig
+
+__all__ = [
+    "Trace",
