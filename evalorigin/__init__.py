@@ -25,3 +25,9 @@ from .gate import evaluate_gate, GateConfig
 
 __all__ = [
     "Trace",
+    "TraceStep",
+    "Incident",
+    "RegressionCase",
+    "Rubric",
+    "RubricCriterion",
+    "Fixture",
