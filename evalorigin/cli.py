@@ -14,3 +14,16 @@ Exit codes for ``gate``: 0 = pass, 10 = warn, 20 = block.
 """
 
 from __future__ import annotations
+
+import argparse
+import sys
+from typing import List, Optional
+
+from . import __version__
+from .compiler import compile_pack
+from .gate import GateConfig
+from .loader import dumps_canonical, load_sources
+from .report import render_pack
+
+_GATE_EXIT = {"pass": 0, "warn": 10, "block": 20}
+
