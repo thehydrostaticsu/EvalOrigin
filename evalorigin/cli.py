@@ -27,3 +27,16 @@ from .report import render_pack
 
 _GATE_EXIT = {"pass": 0, "warn": 10, "block": 20}
 
+
+def _build_gate_config(args: argparse.Namespace) -> GateConfig:
+    block_sevs = tuple(s.strip().lower() for s in args.block_severities.split(",") if s.strip())
+    return GateConfig(
+        block_severities=block_sevs or ("critical",),
+        warn_threshold=args.warn_threshold,
+        block_threshold=args.block_threshold,
+    )
+
+
+def _write(text: str, out: Optional[str]) -> None:
+    if out and out != "-":
+        import os
