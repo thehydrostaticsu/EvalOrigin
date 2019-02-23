@@ -40,3 +40,17 @@ def _build_gate_config(args: argparse.Namespace) -> GateConfig:
 def _write(text: str, out: Optional[str]) -> None:
     if out and out != "-":
         import os
+        parent = os.path.dirname(out)
+        if parent:
+            os.makedirs(parent, exist_ok=True)
+        with open(out, "w", encoding="utf-8", newline="\n") as fh:
+            fh.write(text if text.endswith("\n") else text + "\n")
+    else:
+        sys.stdout.write(text if text.endswith("\n") else text + "\n")
+
+
+def _add_common(sub: argparse.ArgumentParser) -> None:
+    sub.add_argument("inputs", nargs="+", help="JSON/JSONL trace or incident files")
+    sub.add_argument("-o", "--out", default="-", help="output path (default stdout)")
+    sub.add_argument("--name", default="pack", help="logical pack name for id derivation")
+
