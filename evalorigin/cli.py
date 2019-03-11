@@ -54,3 +54,16 @@ def _add_common(sub: argparse.ArgumentParser) -> None:
     sub.add_argument("-o", "--out", default="-", help="output path (default stdout)")
     sub.add_argument("--name", default="pack", help="logical pack name for id derivation")
 
+
+def _add_gate_opts(sub: argparse.ArgumentParser) -> None:
+    sub.add_argument("--block-severities", default="critical",
+                     help="comma list of severities that force a block verdict")
+    sub.add_argument("--warn-threshold", type=float, default=0.35)
+    sub.add_argument("--block-threshold", type=float, default=0.65)
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        prog="evalorigin",
+        description="Trace-to-evaluation compiler: turn failures into gates.",
+    )
