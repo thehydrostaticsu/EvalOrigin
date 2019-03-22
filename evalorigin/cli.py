@@ -67,3 +67,16 @@ def build_parser() -> argparse.ArgumentParser:
         prog="evalorigin",
         description="Trace-to-evaluation compiler: turn failures into gates.",
     )
+    parser.add_argument("--version", action="version", version=f"evalorigin {__version__}")
+    sub = parser.add_subparsers(dest="command", required=True)
+
+    p_compile = sub.add_parser("compile", help="compile a full JSON pack")
+    _add_common(p_compile)
+    _add_gate_opts(p_compile)
+
+    p_cases = sub.add_parser("cases", help="emit regression cases as JSON")
+    _add_common(p_cases)
+
+    p_rubric = sub.add_parser("rubric", help="emit rubrics as JSON")
+    _add_common(p_rubric)
+    p_rubric.add_argument("--entrypoint", default=None, help="scope to one entrypoint")
