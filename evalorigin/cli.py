@@ -93,3 +93,17 @@ def build_parser() -> argparse.ArgumentParser:
     _add_gate_opts(p_report)
 
     p_inspect = sub.add_parser("inspect", help="summarize inputs without compiling")
+    p_inspect.add_argument("inputs", nargs="+", help="JSON/JSONL trace or incident files")
+
+    return parser
+
+
+def _cmd_inspect(inputs: List[str]) -> int:
+    traces, incidents = load_sources(inputs)
+    failing = sum(1 for t in traces if t.outcome.lower() in ("fail", "failed", "error") or t.failing_steps)
+    summary = {
+        "sources": list(inputs),
+        "traces": len(traces),
+        "failing_traces": failing,
+        "incidents": len(incidents),
+        "entrypoints": sorted({t.entrypoint for t in traces} | {i.entrypoint for i in incidents}),
