@@ -80,3 +80,16 @@ def build_parser() -> argparse.ArgumentParser:
     p_rubric = sub.add_parser("rubric", help="emit rubrics as JSON")
     _add_common(p_rubric)
     p_rubric.add_argument("--entrypoint", default=None, help="scope to one entrypoint")
+
+    p_fixtures = sub.add_parser("fixtures", help="emit replay fixtures as JSON")
+    _add_common(p_fixtures)
+
+    p_gate = sub.add_parser("gate", help="print gate verdict (exit code encodes verdict)")
+    _add_common(p_gate)
+    _add_gate_opts(p_gate)
+
+    p_report = sub.add_parser("report", help="render a Markdown release report")
+    _add_common(p_report)
+    _add_gate_opts(p_report)
+
+    p_inspect = sub.add_parser("inspect", help="summarize inputs without compiling")
