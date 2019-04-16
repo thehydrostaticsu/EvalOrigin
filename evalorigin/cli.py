@@ -120,3 +120,16 @@ def main(argv: Optional[List[str]] = None) -> int:
         return _cmd_inspect(args.inputs)
 
     traces, incidents = load_sources(args.inputs)
+
+    if args.command == "cases":
+        pack = compile_pack(traces, incidents, args.name)
+        _write(dumps_canonical([c.to_dict() for c in pack.cases]), args.out)
+        return 0
+
+    if args.command == "rubric":
+        pack = compile_pack(traces, incidents, args.name)
+        rubrics = pack.rubrics
+        if args.entrypoint:
+            rubrics = [r for r in rubrics if r.entrypoint == args.entrypoint]
+        _write(dumps_canonical([r.to_dict() for r in rubrics]), args.out)
+        return 0
