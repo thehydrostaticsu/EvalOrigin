@@ -107,3 +107,16 @@ def _cmd_inspect(inputs: List[str]) -> int:
         "failing_traces": failing,
         "incidents": len(incidents),
         "entrypoints": sorted({t.entrypoint for t in traces} | {i.entrypoint for i in incidents}),
+    }
+    sys.stdout.write(dumps_canonical(summary) + "\n")
+    return 0
+
+
+def main(argv: Optional[List[str]] = None) -> int:
+    parser = build_parser()
+    args = parser.parse_args(argv)
+
+    if args.command == "inspect":
+        return _cmd_inspect(args.inputs)
+
+    traces, incidents = load_sources(args.inputs)
