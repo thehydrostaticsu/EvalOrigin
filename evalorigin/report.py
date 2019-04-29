@@ -66,3 +66,15 @@ def render_pack(pack: Pack) -> str:
     if pack.cases:
         rows = [
             [
+                _fmt(c.case_id, 20),
+                _fmt(c.entrypoint, 24),
+                _fmt(c.severity, 10),
+                _fmt(c.origin, 24),
+                _fmt(c.given),
+                _fmt(c.expect),
+            ]
+            for c in pack.cases
+        ]
+        lines.append(
+            _table(
+                ["Case", "Entrypoint", "Severity", "Origin", "Given", "Expect"],
