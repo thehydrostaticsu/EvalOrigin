@@ -43,3 +43,15 @@ def render_pack(pack: Pack) -> str:
     lines.append("")
     lines.append(f"- Risk score: `{gate.score:.2f}`")
     lines.append(f"- Total cases: `{gate.total_cases}`")
+    lines.append(f"- Blocking cases: `{gate.blocking_cases}`")
+    lines.append(f"- Entrypoints: {', '.join('`' + e + '`' for e in pack.entrypoints) or '_none_'}")
+    lines.append("")
+    lines.append("## Gate reasons")
+    lines.append("")
+    for reason in gate.reasons:
+        lines.append(f"- {reason}")
+    lines.append("")
+
+    lines.append("## Severity distribution")
+    lines.append("")
+    if gate.by_severity:
