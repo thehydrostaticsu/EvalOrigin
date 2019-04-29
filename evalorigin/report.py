@@ -32,3 +32,14 @@ def _fmt(value: object, width: int = 48) -> str:
     return text or "\u2014"
 
 
+def render_pack(pack: Pack) -> str:
+    """Render a compiled pack to a Markdown release report."""
+    gate = pack.gate
+    lines: List[str] = []
+
+    lines.append(f"# EvalOrigin Report - `{pack.pack_id}`")
+    lines.append("")
+    lines.append(f"**Gate verdict:** {_VERDICT_BADGE.get(gate.verdict, gate.verdict.upper())}")
+    lines.append("")
+    lines.append(f"- Risk score: `{gate.score:.2f}`")
+    lines.append(f"- Total cases: `{gate.total_cases}`")
