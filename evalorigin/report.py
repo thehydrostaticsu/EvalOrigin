@@ -55,3 +55,14 @@ def render_pack(pack: Pack) -> str:
     lines.append("## Severity distribution")
     lines.append("")
     if gate.by_severity:
+        rows = [[sev, str(count)] for sev, count in sorted(gate.by_severity.items())]
+        lines.append(_table(["Severity", "Cases"], rows))
+    else:
+        lines.append("_No cases compiled._")
+    lines.append("")
+
+    lines.append("## Regression cases")
+    lines.append("")
+    if pack.cases:
+        rows = [
+            [
