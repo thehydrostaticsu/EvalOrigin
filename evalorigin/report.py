@@ -9,3 +9,14 @@ from __future__ import annotations
 from typing import List
 
 from .model import Pack
+
+_VERDICT_BADGE = {
+    "pass": "PASS",
+    "warn": "WARN",
+    "block": "BLOCK",
+}
+
+
+def _table(headers: List[str], rows: List[List[str]]) -> str:
+    line = "| " + " | ".join(headers) + " |"
+    sep = "| " + " | ".join("---" for _ in headers) + " |"
