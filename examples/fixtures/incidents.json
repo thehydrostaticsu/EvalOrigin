@@ -23,3 +23,10 @@
   {
     "incident_id": "INC-1990",
     "title": "Session token accepted past expiry window",
+    "severity": "high",
+    "entrypoint": "auth.verify",
+    "signature": "ExpiryCheck:skew_ignored",
+    "notes": "Clock skew tolerance applied in the wrong direction.",
+    "trace": {
+      "trace_id": "tr-auth-1990",
+      "entrypoint": "auth.verify",
