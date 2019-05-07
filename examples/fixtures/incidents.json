@@ -36,3 +36,10 @@
       "actual": {"valid": true},
       "steps": [
         {"index": 0, "op": "decode_token", "input": {"token": "eyJ...redacted"}, "output": {"exp": 1699990000}, "status": "ok"},
+        {"index": 1, "op": "check_expiry", "input": {"exp": 1699990000, "now": 1699990900}, "output": {"valid": true}, "status": "error", "detail": "skew added to now instead of subtracted"}
+      ]
+    }
+  },
+  {
+    "incident_id": "INC-1877",
+    "title": "Search returns stale index after reindex",
