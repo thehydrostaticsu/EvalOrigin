@@ -17,3 +17,9 @@
         {"index": 0, "op": "load_cart", "input": {"cart_id": "c-88"}, "output": {"lines": 3}, "status": "ok"},
         {"index": 1, "op": "convert_currency", "input": {"from": "EUR", "to": "USD", "amount": 3610}, "output": {"amount": 4207}, "status": "ok"},
         {"index": 2, "op": "apply_rounding", "input": {"amount": 4207}, "output": {"amount": 4200}, "status": "error", "detail": "truncated to nearest 100 instead of banker's rounding"}
+      ]
+    }
+  },
+  {
+    "incident_id": "INC-1990",
+    "title": "Session token accepted past expiry window",
