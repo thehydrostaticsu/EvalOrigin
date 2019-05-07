@@ -1,0 +1,6 @@
+[
+  {
+    "incident_id": "INC-2041",
+    "title": "Checkout total drops cents on multi-currency carts",
+    "severity": "critical",
+    "entrypoint": "checkout.total",
