@@ -4,3 +4,9 @@
     "title": "Checkout total drops cents on multi-currency carts",
     "severity": "critical",
     "entrypoint": "checkout.total",
+    "signature": "RoundingError:cents_truncated",
+    "notes": "Reported by payments on the EUR->USD conversion path.",
+    "trace": {
+      "trace_id": "tr-checkout-2041",
+      "entrypoint": "checkout.total",
+      "outcome": "failed",
