@@ -10,3 +10,10 @@
       "trace_id": "tr-checkout-2041",
       "entrypoint": "checkout.total",
       "outcome": "failed",
+      "tags": ["payments", "currency"],
+      "expected": {"total": 4207, "currency": "USD"},
+      "actual": {"total": 4200, "currency": "USD"},
+      "steps": [
+        {"index": 0, "op": "load_cart", "input": {"cart_id": "c-88"}, "output": {"lines": 3}, "status": "ok"},
+        {"index": 1, "op": "convert_currency", "input": {"from": "EUR", "to": "USD", "amount": 3610}, "output": {"amount": 4207}, "status": "ok"},
+        {"index": 2, "op": "apply_rounding", "input": {"amount": 4207}, "output": {"amount": 4200}, "status": "error", "detail": "truncated to nearest 100 instead of banker's rounding"}
