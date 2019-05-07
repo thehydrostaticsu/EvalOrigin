@@ -78,3 +78,14 @@ def render_pack(pack: Pack) -> str:
         lines.append(
             _table(
                 ["Case", "Entrypoint", "Severity", "Origin", "Given", "Expect"],
+                rows,
+            )
+        )
+    else:
+        lines.append("_No cases compiled._")
+    lines.append("")
+
+    lines.append("## Rubrics")
+    lines.append("")
+    for rubric in pack.rubrics:
+        lines.append(f"### `{rubric.entrypoint}` - {rubric.rubric_id}")
