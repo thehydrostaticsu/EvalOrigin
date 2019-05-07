@@ -30,3 +30,9 @@
     "trace": {
       "trace_id": "tr-auth-1990",
       "entrypoint": "auth.verify",
+      "outcome": "failed",
+      "tags": ["auth", "security"],
+      "expected": {"valid": false, "reason": "expired"},
+      "actual": {"valid": true},
+      "steps": [
+        {"index": 0, "op": "decode_token", "input": {"token": "eyJ...redacted"}, "output": {"exp": 1699990000}, "status": "ok"},
