@@ -43,3 +43,9 @@
   {
     "incident_id": "INC-1877",
     "title": "Search returns stale index after reindex",
+    "severity": "medium",
+    "entrypoint": "search.query",
+    "signature": "CacheStale:generation_pin",
+    "notes": "Query planner pinned an old index generation.",
+    "trace": {
+      "trace_id": "tr-search-1877",
