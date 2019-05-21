@@ -1,0 +1,9 @@
+[
+  {
+    "case_id": "case-830a112dd507",
+    "entrypoint": "checkout.total",
+    "given": {
+      "cart_id": "c-88"
+    },
+    "expect": {
+      "total": 4207,
