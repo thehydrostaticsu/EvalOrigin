@@ -7,3 +7,14 @@
     },
     "expect": {
       "total": 4207,
+      "currency": "USD"
+    },
+    "origin": "incident:INC-2041",
+    "severity": "critical",
+    "steps": 3
+  },
+  {
+    "case_id": "case-1af79f6e3803",
+    "entrypoint": "auth.verify",
+    "given": {
+      "token": "eyJ...redacted"
