@@ -18,3 +18,15 @@
     "entrypoint": "auth.verify",
     "given": {
       "token": "eyJ...redacted"
+    },
+    "expect": {
+      "valid": false,
+      "reason": "expired"
+    },
+    "origin": "incident:INC-1990",
+    "severity": "high",
+    "steps": 2
+  },
+  {
+    "case_id": "case-950e718d20af",
+    "entrypoint": "etl.transform",
