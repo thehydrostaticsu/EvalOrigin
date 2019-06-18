@@ -41,3 +41,14 @@
     "steps": 2
   },
   {
+    "case_id": "case-4dde576108e3",
+    "entrypoint": "report.render",
+    "given": {
+      "window": "24h"
+    },
+    "expect": {
+      "bytes": 20480
+    },
+    "origin": "trace-failure",
+    "severity": "high",
+    "steps": 2
