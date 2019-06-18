@@ -30,3 +30,14 @@
   {
     "case_id": "case-950e718d20af",
     "entrypoint": "etl.transform",
+    "given": {
+      "path": "s3://raw/day.csv"
+    },
+    "expect": {
+      "rows": 100
+    },
+    "origin": "trace-failure",
+    "severity": "high",
+    "steps": 2
+  },
+  {
