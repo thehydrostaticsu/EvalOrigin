@@ -52,3 +52,14 @@
     "origin": "trace-failure",
     "severity": "high",
     "steps": 2
+  },
+  {
+    "case_id": "case-bdaeb8c13845",
+    "entrypoint": "etl.transform",
+    "given": {
+      "path": "s3://raw/day.csv"
+    },
+    "expect": {
+      "rows": 100
+    },
+    "origin": "golden-path",
