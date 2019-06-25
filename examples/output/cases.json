@@ -63,3 +63,15 @@
       "rows": 100
     },
     "origin": "golden-path",
+    "severity": "medium",
+    "steps": 2
+  },
+  {
+    "case_id": "case-de5cb01f3874",
+    "entrypoint": "report.render",
+    "given": {
+      "window": "24h"
+    },
+    "expect": {
+      "bytes": 20480
+    },
