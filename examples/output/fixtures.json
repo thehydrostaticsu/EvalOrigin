@@ -6,3 +6,12 @@
     "payload": {
       "token": "eyJ...redacted"
     },
+    "expect": {
+      "valid": false,
+      "reason": "expired"
+    }
+  },
+  {
+    "fixture_id": "fx-53f0f3ef7e4b",
+    "case_id": "case-be38b325e33b",
+    "entrypoint": "search.query",
