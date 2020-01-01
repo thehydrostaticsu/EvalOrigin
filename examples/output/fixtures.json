@@ -1,0 +1,8 @@
+[
+  {
+    "fixture_id": "fx-3355654dfddb",
+    "case_id": "case-1af79f6e3803",
+    "entrypoint": "auth.verify",
+    "payload": {
+      "token": "eyJ...redacted"
+    },
