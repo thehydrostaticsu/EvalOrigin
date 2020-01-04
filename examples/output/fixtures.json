@@ -25,3 +25,13 @@
   },
   {
     "fixture_id": "fx-68248edcff9f",
+    "case_id": "case-4dde576108e3",
+    "entrypoint": "report.render",
+    "payload": {
+      "window": "24h"
+    },
+    "expect": {
+      "bytes": 20480
+    }
+  },
+  {
