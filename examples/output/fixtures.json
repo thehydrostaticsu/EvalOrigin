@@ -44,3 +44,13 @@
     "expect": {
       "rows": 100
     }
+  },
+  {
+    "fixture_id": "fx-8b1aaf3c77b0",
+    "case_id": "case-bdaeb8c13845",
+    "entrypoint": "etl.transform",
+    "payload": {
+      "path": "s3://raw/day.csv"
+    },
+    "expect": {
+      "rows": 100
