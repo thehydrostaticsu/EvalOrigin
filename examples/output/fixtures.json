@@ -54,3 +54,12 @@
     },
     "expect": {
       "rows": 100
+    }
+  },
+  {
+    "fixture_id": "fx-8f4b7328381b",
+    "case_id": "case-830a112dd507",
+    "entrypoint": "checkout.total",
+    "payload": {
+      "cart_id": "c-88"
+    },
