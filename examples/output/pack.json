@@ -1,0 +1,35 @@
+{
+  "pack_id": "pack-8ede0409f83f",
+  "schema": "evalorigin/pack/v1",
+  "entrypoints": [
+    "auth.verify",
+    "checkout.total",
+    "etl.transform",
+    "report.render",
+    "search.query"
+  ],
+  "cases": [
+    {
+      "case_id": "case-830a112dd507",
+      "entrypoint": "checkout.total",
+      "given": {
+        "cart_id": "c-88"
+      },
+      "expect": {
+        "total": 4207,
+        "currency": "USD"
+      },
+      "origin": "incident:INC-2041",
+      "severity": "critical",
+      "steps": 3
+    },
+    {
+      "case_id": "case-1af79f6e3803",
+      "entrypoint": "auth.verify",
+      "given": {
+        "token": "eyJ...redacted"
+      },
+      "expect": {
+        "valid": false,
+        "reason": "expired"
+      },
