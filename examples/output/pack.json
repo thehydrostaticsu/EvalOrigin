@@ -100,3 +100,25 @@
         "generation": 8
       },
       "origin": "incident:INC-1877",
+      "severity": "medium",
+      "steps": 2
+    }
+  ],
+  "rubrics": [
+    {
+      "rubric_id": "rubric-cc972827df26",
+      "entrypoint": "auth.verify",
+      "criteria": [
+        {
+          "key": "output_matches",
+          "description": "Candidate output equals the pinned expectation.",
+          "weight": 0.375,
+          "check": "equals(expect)"
+        },
+        {
+          "key": "no_error_status",
+          "description": "No step reports an error or failed status.",
+          "weight": 0.25,
+          "check": "all_steps_ok"
+        },
+        {
