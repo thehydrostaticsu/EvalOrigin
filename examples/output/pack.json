@@ -189,3 +189,26 @@
           "weight": 0.125,
           "check": "steps<=2"
         },
+        {
+          "key": "severity_guard",
+          "description": "High/critical origin cases must pass without waivers.",
+          "weight": 0.25,
+          "check": "no_waiver_on_high"
+        }
+      ],
+      "total_weight": 1.0
+    },
+    {
+      "rubric_id": "rubric-03db80a5a36a",
+      "entrypoint": "report.render",
+      "criteria": [
+        {
+          "key": "output_matches",
+          "description": "Candidate output equals the pinned expectation.",
+          "weight": 0.375,
+          "check": "equals(expect)"
+        },
+        {
+          "key": "no_error_status",
+          "description": "No step reports an error or failed status.",
+          "weight": 0.25,
