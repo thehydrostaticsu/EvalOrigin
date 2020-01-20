@@ -279,3 +279,25 @@
         "hits": 12,
         "generation": 8
       }
+    },
+    {
+      "fixture_id": "fx-68248edcff9f",
+      "case_id": "case-4dde576108e3",
+      "entrypoint": "report.render",
+      "payload": {
+        "window": "24h"
+      },
+      "expect": {
+        "bytes": 20480
+      }
+    },
+    {
+      "fixture_id": "fx-85e75f061c69",
+      "case_id": "case-950e718d20af",
+      "entrypoint": "etl.transform",
+      "payload": {
+        "path": "s3://raw/day.csv"
+      },
+      "expect": {
+        "rows": 100
+      }
