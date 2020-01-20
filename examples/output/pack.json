@@ -256,3 +256,26 @@
     }
   ],
   "fixtures": [
+    {
+      "fixture_id": "fx-3355654dfddb",
+      "case_id": "case-1af79f6e3803",
+      "entrypoint": "auth.verify",
+      "payload": {
+        "token": "eyJ...redacted"
+      },
+      "expect": {
+        "valid": false,
+        "reason": "expired"
+      }
+    },
+    {
+      "fixture_id": "fx-53f0f3ef7e4b",
+      "case_id": "case-be38b325e33b",
+      "entrypoint": "search.query",
+      "payload": {
+        "alias": "products"
+      },
+      "expect": {
+        "hits": 12,
+        "generation": 8
+      }
