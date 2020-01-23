@@ -7,3 +7,11 @@
 - Blocking cases: `1`
 - Entrypoints: `auth.verify`, `checkout.total`, `etl.transform`, `report.render`, `search.query`
 
+## Gate reasons
+
+- 1 case(s) at blocking severity ['critical']
+
+## Severity distribution
+
+| Severity | Cases |
+| --- | --- |
