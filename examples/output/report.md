@@ -15,3 +15,11 @@
 
 | Severity | Cases |
 | --- | --- |
+| critical | 1 |
+| high | 3 |
+| medium | 3 |
+
+## Regression cases
+
+| Case | Entrypoint | Severity | Origin | Given | Expect |
+| --- | --- | --- | --- | --- | --- |
