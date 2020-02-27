@@ -23,3 +23,11 @@
 
 | Case | Entrypoint | Severity | Origin | Given | Expect |
 | --- | --- | --- | --- | --- | --- |
+| case-830a112dd507 | checkout.total | critical | incident:INC-2041 | {'cart_id': 'c-88'} | {'total': 4207, 'currency': 'USD'} |
+| case-1af79f6e3803 | auth.verify | high | incident:INC-1990 | {'token': 'eyJ...redacted'} | {'valid': False, 'reason': 'expired'} |
+| case-950e718d20af | etl.transform | high | trace-failure | {'path': 's3://raw/day.csv'} | {'rows': 100} |
+| case-4dde576108e3 | report.render | high | trace-failure | {'window': '24h'} | {'bytes': 20480} |
+| case-bdaeb8c13845 | etl.transform | medium | golden-path | {'path': 's3://raw/day.csv'} | {'rows': 100} |
+| case-de5cb01f3874 | report.render | medium | golden-path | {'window': '24h'} | {'bytes': 20480} |
+| case-be38b325e33b | search.query | medium | incident:INC-1877 | {'alias': 'products'} | {'hits': 12, 'generation': 8} |
+
