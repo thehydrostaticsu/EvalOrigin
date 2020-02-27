@@ -31,3 +31,12 @@
 | case-de5cb01f3874 | report.render | medium | golden-path | {'window': '24h'} | {'bytes': 20480} |
 | case-be38b325e33b | search.query | medium | incident:INC-1877 | {'alias': 'products'} | {'hits': 12, 'generation': 8} |
 
+## Rubrics
+
+### `auth.verify` - rubric-cc972827df26
+
+| Criterion | Weight | Check | Description |
+| --- | --- | --- | --- |
+| output_matches | 0.38 | equals(expect) | Candidate output equals the pinned expectation. |
+| no_error_status | 0.25 | all_steps_ok | No step reports an error or failed status. |
+| within_step_budget | 0.12 | steps<=2 | Execution completes within 2 recorded steps. |
