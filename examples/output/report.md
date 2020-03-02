@@ -65,3 +65,11 @@
 | Criterion | Weight | Check | Description |
 | --- | --- | --- | --- |
 | output_matches | 0.38 | equals(expect) | Candidate output equals the pinned expectation. |
+| no_error_status | 0.25 | all_steps_ok | No step reports an error or failed status. |
+| within_step_budget | 0.12 | steps<=2 | Execution completes within 2 recorded steps. |
+| severity_guard | 0.25 | no_waiver_on_high | High/critical origin cases must pass without waivers. |
+
+### `search.query` - rubric-f3c9ec0cb4ae
+
+| Criterion | Weight | Check | Description |
+| --- | --- | --- | --- |
