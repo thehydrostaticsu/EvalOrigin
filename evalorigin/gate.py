@@ -62,3 +62,14 @@ def evaluate_gate(cases: List[RegressionCase], config: GateConfig) -> GateSummar
         reasons.append(f"risk score {score:.2f} >= warn threshold {config.warn_threshold}")
     else:
         reasons.append(f"risk score {score:.2f} below warn threshold {config.warn_threshold}")
+
+    if not cases:
+        reasons = ["no regression cases compiled; nothing to gate"]
+
+    return GateSummary(
+        verdict=verdict,
+        score=score,
+        total_cases=len(cases),
+        blocking_cases=blocking,
+        by_severity=by_severity,
+        reasons=reasons,
