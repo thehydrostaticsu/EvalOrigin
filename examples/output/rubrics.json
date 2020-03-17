@@ -54,3 +54,17 @@
       },
       {
         "key": "severity_guard",
+        "description": "High/critical origin cases must pass without waivers.",
+        "weight": 0.25,
+        "check": "no_waiver_on_high"
+      }
+    ],
+    "total_weight": 1.0
+  },
+  {
+    "rubric_id": "rubric-d261bc7fb729",
+    "entrypoint": "etl.transform",
+    "criteria": [
+      {
+        "key": "output_matches",
+        "description": "Candidate output equals the pinned expectation.",
