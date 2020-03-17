@@ -68,3 +68,16 @@
       {
         "key": "output_matches",
         "description": "Candidate output equals the pinned expectation.",
+        "weight": 0.375,
+        "check": "equals(expect)"
+      },
+      {
+        "key": "no_error_status",
+        "description": "No step reports an error or failed status.",
+        "weight": 0.25,
+        "check": "all_steps_ok"
+      },
+      {
+        "key": "within_step_budget",
+        "description": "Execution completes within 2 recorded steps.",
+        "weight": 0.125,
