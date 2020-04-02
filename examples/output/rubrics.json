@@ -95,3 +95,17 @@
   {
     "rubric_id": "rubric-03db80a5a36a",
     "entrypoint": "report.render",
+    "criteria": [
+      {
+        "key": "output_matches",
+        "description": "Candidate output equals the pinned expectation.",
+        "weight": 0.375,
+        "check": "equals(expect)"
+      },
+      {
+        "key": "no_error_status",
+        "description": "No step reports an error or failed status.",
+        "weight": 0.25,
+        "check": "all_steps_ok"
+      },
+      {
