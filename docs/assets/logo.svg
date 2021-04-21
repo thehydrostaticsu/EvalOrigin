@@ -19,3 +19,7 @@
   <g fill="#ffb347">
     <circle cx="40" cy="108" r="5.5"><animate attributeName="r" values="5.5;8;5.5" dur="1.8s" repeatCount="indefinite"/></circle>
     <circle cx="96" cy="66" r="4.5"/>
+    <circle cx="152" cy="128" r="4.5"/>
+    <circle cx="208" cy="78" r="4.5"/>
+    <circle cx="256" cy="100" r="4.5"/>
+  </g>
