@@ -14,3 +14,8 @@
   <g fill="none" stroke="#ffb347" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
     <path d="M40 108 L96 66 L152 128 L208 78 L256 100">
       <animate attributeName="stroke-dasharray" values="0 360;360 0" dur="2.6s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  <g fill="#ffb347">
+    <circle cx="40" cy="108" r="5.5"><animate attributeName="r" values="5.5;8;5.5" dur="1.8s" repeatCount="indefinite"/></circle>
+    <circle cx="96" cy="66" r="4.5"/>
