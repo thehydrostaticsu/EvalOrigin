@@ -10,3 +10,7 @@
   </defs>
   <rect x="0" y="0" width="480" height="200" rx="16" fill="url(#ep-charcoal)"/>
 
+  <!-- trace polyline: nodes are steps, the path draws in to signal replay -->
+  <g fill="none" stroke="#ffb347" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M40 108 L96 66 L152 128 L208 78 L256 100">
+      <animate attributeName="stroke-dasharray" values="0 360;360 0" dur="2.6s" repeatCount="indefinite"/>
