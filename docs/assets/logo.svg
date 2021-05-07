@@ -23,3 +23,7 @@
     <circle cx="208" cy="78" r="4.5"/>
     <circle cx="256" cy="100" r="4.5"/>
   </g>
+
+  <!-- gate: a bordered square that draws its check to signal a pass verdict -->
+  <g transform="translate(320 58)">
+    <rect x="0" y="0" width="82" height="82" rx="10" fill="none" stroke="#ffb347" stroke-width="4"/>
