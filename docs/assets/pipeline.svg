@@ -11,3 +11,10 @@
       <text x="88" y="146" font-size="14" font-weight="700" fill="#141416">Traces</text>
       <text x="88" y="166" font-size="11" fill="#3a2a08">+ incidents</text>
     </g>
+
+    <!-- cases -->
+    <g>
+      <rect x="212" y="118" width="128" height="64" rx="9" fill="#ffb347"/>
+      <text x="276" y="146" font-size="14" font-weight="700" fill="#141416">Regression</text>
+      <text x="276" y="166" font-size="12" font-weight="700" fill="#141416">cases</text>
+    </g>
