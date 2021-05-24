@@ -18,3 +18,10 @@
       <text x="276" y="146" font-size="14" font-weight="700" fill="#141416">Regression</text>
       <text x="276" y="166" font-size="12" font-weight="700" fill="#141416">cases</text>
     </g>
+
+    <!-- rubrics / fixtures -->
+    <g>
+      <rect x="400" y="52" width="128" height="56" rx="9" fill="none" stroke="#ffb347" stroke-width="2.5"/>
+      <text x="464" y="78" font-size="13" font-weight="700" fill="#ffb347">Rubrics</text>
+      <text x="464" y="96" font-size="10.5" fill="#c9c9cf">weighted criteria</text>
+
