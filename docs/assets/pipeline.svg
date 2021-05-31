@@ -46,3 +46,10 @@
   <g stroke="#ffb347" stroke-width="2.5" fill="none" marker-end="url(#ep-arrow)">
     <line x1="152" y1="150" x2="208" y2="150"/>
     <line x1="340" y1="140" x2="396" y2="86"/>
+    <line x1="340" y1="160" x2="396" y2="216"/>
+    <line x1="528" y1="86" x2="588" y2="132"/>
+    <line x1="528" y1="216" x2="588" y2="164"/>
+  </g>
+  <defs>
+    <marker id="ep-arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L7 3 L0 6 Z" fill="#ffb347"/>
