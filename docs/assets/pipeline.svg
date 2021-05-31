@@ -39,3 +39,10 @@
         <circle cx="612" cy="170" r="4.5" fill="#f5c451"/><text x="624" y="174" fill="#c9c9cf">warn · exit 10</text>
         <circle cx="612" cy="188" r="4.5" fill="#e5695f"/><text x="624" y="192" fill="#c9c9cf">block · exit 20</text>
       </g>
+    </g>
+  </g>
+
+  <!-- connectors -->
+  <g stroke="#ffb347" stroke-width="2.5" fill="none" marker-end="url(#ep-arrow)">
+    <line x1="152" y1="150" x2="208" y2="150"/>
+    <line x1="340" y1="140" x2="396" y2="86"/>
