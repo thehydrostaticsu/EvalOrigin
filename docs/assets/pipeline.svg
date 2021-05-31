@@ -32,3 +32,10 @@
 
     <!-- gate + verdicts -->
     <g>
+      <rect x="592" y="110" width="144" height="80" rx="9" fill="#1f1f23" stroke="#ffb347" stroke-width="3"/>
+      <text x="664" y="136" font-size="14" font-weight="700" fill="#ffb347">Release gate</text>
+      <g font-size="11" text-anchor="start">
+        <circle cx="612" cy="152" r="4.5" fill="#3fbf7f"/><text x="624" y="156" fill="#c9c9cf">pass · exit 0</text>
+        <circle cx="612" cy="170" r="4.5" fill="#f5c451"/><text x="624" y="174" fill="#c9c9cf">warn · exit 10</text>
+        <circle cx="612" cy="188" r="4.5" fill="#e5695f"/><text x="624" y="192" fill="#c9c9cf">block · exit 20</text>
+      </g>
