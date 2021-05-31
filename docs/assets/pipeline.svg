@@ -25,3 +25,10 @@
       <text x="464" y="78" font-size="13" font-weight="700" fill="#ffb347">Rubrics</text>
       <text x="464" y="96" font-size="10.5" fill="#c9c9cf">weighted criteria</text>
 
+      <rect x="400" y="192" width="128" height="56" rx="9" fill="none" stroke="#ffb347" stroke-width="2.5"/>
+      <text x="464" y="218" font-size="13" font-weight="700" fill="#ffb347">Fixtures</text>
+      <text x="464" y="236" font-size="10.5" fill="#c9c9cf">replay pins</text>
+    </g>
+
+    <!-- gate + verdicts -->
+    <g>
