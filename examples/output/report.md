@@ -73,3 +73,17 @@
 
 | Criterion | Weight | Check | Description |
 | --- | --- | --- | --- |
+| output_matches | 0.50 | equals(expect) | Candidate output equals the pinned expectation. |
+| no_error_status | 0.33 | all_steps_ok | No step reports an error or failed status. |
+| within_step_budget | 0.17 | steps<=2 | Execution completes within 2 recorded steps. |
+
+## Replay fixtures
+
+| Fixture | Case | Entrypoint |
+| --- | --- | --- |
+| fx-3355654dfddb | case-1af79f6e3803 | auth.verify |
+| fx-53f0f3ef7e4b | case-be38b325e33b | search.query |
+| fx-68248edcff9f | case-4dde576108e3 | report.render |
+| fx-85e75f061c69 | case-950e718d20af | etl.transform |
+| fx-8b1aaf3c77b0 | case-bdaeb8c13845 | etl.transform |
+| fx-8f4b7328381b | case-830a112dd507 | checkout.total |
