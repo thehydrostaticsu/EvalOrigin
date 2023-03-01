@@ -89,3 +89,23 @@ def render_pack(pack: Pack) -> str:
     lines.append("")
     for rubric in pack.rubrics:
         lines.append(f"### `{rubric.entrypoint}` - {rubric.rubric_id}")
+        lines.append("")
+        rows = [
+            [c.key, f"{c.weight:.2f}", c.check, _fmt(c.description, 60)]
+            for c in rubric.criteria
+        ]
+        lines.append(_table(["Criterion", "Weight", "Check", "Description"], rows))
+        lines.append("")
+
+    lines.append("## Replay fixtures")
+    lines.append("")
+    if pack.fixtures:
+        rows = [
+            [_fmt(f.fixture_id, 20), _fmt(f.case_id, 20), _fmt(f.entrypoint, 24)]
+            for f in pack.fixtures
+        ]
+        lines.append(_table(["Fixture", "Case", "Entrypoint"], rows))
+    else:
+        lines.append("_No fixtures compiled._")
+    lines.append("")
+
