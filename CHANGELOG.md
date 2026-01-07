@@ -72,3 +72,18 @@ a Changelog, and the project uses semantic versioning.
 
 ### Added
 
+- Release gate model: declared checks with pass and fail outcomes.
+
+## [0.2.0] - 2016-07-12
+
+### Added
+
+- The compiler: traces and incidents to regression cases.
+
+## [0.1.0] - 2015-03-17
+
+### Added
+
+- Initial trace and incident loaders with the case model.
+
+<!-- draft note 1385 -->
