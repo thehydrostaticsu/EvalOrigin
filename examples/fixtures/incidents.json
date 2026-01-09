@@ -49,3 +49,17 @@
     "notes": "Query planner pinned an old index generation.",
     "trace": {
       "trace_id": "tr-search-1877",
+      "entrypoint": "search.query",
+      "outcome": "failed",
+      "tags": ["search"],
+      "expected": {"hits": 12, "generation": 8},
+      "actual": {"hits": 9, "generation": 7},
+      "steps": [
+        {"index": 0, "op": "resolve_generation", "input": {"alias": "products"}, "output": {"generation": 7}, "status": "error", "detail": "alias resolved before swap committed"},
+        {"index": 1, "op": "run_query", "input": {"q": "amber lamp"}, "output": {"hits": 9}, "status": "ok"}
+      ]
+    }
+  }
+]
+
+<!-- draft note 1387 -->
