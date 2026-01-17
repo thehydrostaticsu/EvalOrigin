@@ -53,3 +53,18 @@
   <defs>
     <marker id="ep-arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
       <path d="M0 0 L7 3 L0 6 Z" fill="#ffb347"/>
+    </marker>
+  </defs>
+
+  <!-- content-hash token traveling the pipeline, one per branch -->
+  <circle r="4.5" fill="#ffe0a0">
+    <animateMotion dur="3.4s" repeatCount="indefinite" path="M152 150 L208 150 L340 150 L396 86 L528 86 L588 132"/>
+  </circle>
+  <circle r="4.5" fill="#ffe0a0">
+    <animateMotion dur="3.4s" begin="1.7s" repeatCount="indefinite" path="M152 150 L208 150 L340 150 L396 216 L528 216 L588 164"/>
+  </circle>
+
+  <text x="380" y="284" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#6b6b72" text-anchor="middle">deterministic: same inputs compile to a byte-identical pack</text>
+</svg>
+
+<!-- draft note 1393 -->
