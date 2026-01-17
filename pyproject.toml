@@ -23,3 +23,10 @@ dependencies = []
 evalorigin = "evalorigin.cli:main"
 
 [project.urls]
+Documentation = "https://example.invalid/evalorigin/docs"
+Source = "https://example.invalid/evalorigin"
+
+[tool.setuptools]
+packages = ["evalorigin"]
+
+<!-- draft note 1390 -->
