@@ -63,3 +63,20 @@
     "payload": {
       "cart_id": "c-88"
     },
+    "expect": {
+      "total": 4207,
+      "currency": "USD"
+    }
+  },
+  {
+    "fixture_id": "fx-8fe7db1fe160",
+    "case_id": "case-de5cb01f3874",
+    "entrypoint": "report.render",
+    "payload": {
+      "window": "24h"
+    },
+    "expect": {
+      "bytes": 20480
+    }
+  }
+]
