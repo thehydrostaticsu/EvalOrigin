@@ -301,3 +301,54 @@
       "expect": {
         "rows": 100
       }
+    },
+    {
+      "fixture_id": "fx-8b1aaf3c77b0",
+      "case_id": "case-bdaeb8c13845",
+      "entrypoint": "etl.transform",
+      "payload": {
+        "path": "s3://raw/day.csv"
+      },
+      "expect": {
+        "rows": 100
+      }
+    },
+    {
+      "fixture_id": "fx-8f4b7328381b",
+      "case_id": "case-830a112dd507",
+      "entrypoint": "checkout.total",
+      "payload": {
+        "cart_id": "c-88"
+      },
+      "expect": {
+        "total": 4207,
+        "currency": "USD"
+      }
+    },
+    {
+      "fixture_id": "fx-8fe7db1fe160",
+      "case_id": "case-de5cb01f3874",
+      "entrypoint": "report.render",
+      "payload": {
+        "window": "24h"
+      },
+      "expect": {
+        "bytes": 20480
+      }
+    }
+  ],
+  "gate": {
+    "verdict": "block",
+    "score": 0.6143,
+    "total_cases": 7,
+    "blocking_cases": 1,
+    "by_severity": {
+      "critical": 1,
+      "high": 3,
+      "medium": 3
+    },
+    "reasons": [
+      "1 case(s) at blocking severity ['critical']"
+    ]
+  }
+}
