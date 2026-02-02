@@ -75,4 +75,4 @@ def evaluate_gate(cases: List[RegressionCase], config: GateConfig) -> GateSummar
         reasons=reasons,
     )
 
-# draft note 1396
+# draft note 1399
