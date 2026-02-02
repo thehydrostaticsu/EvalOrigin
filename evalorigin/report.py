@@ -109,3 +109,6 @@ def render_pack(pack: Pack) -> str:
         lines.append("_No fixtures compiled._")
     lines.append("")
 
+    return "\n".join(lines) + "\n"
+
+# draft note 1398
