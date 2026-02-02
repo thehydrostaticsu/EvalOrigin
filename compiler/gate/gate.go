@@ -101,3 +101,28 @@ func Evaluate(cases []Case, cfg Config) Summary {
 		sorted := append([]string{}, cfg.BlockSeverities...)
 		sort.Strings(sorted)
 		reasons = append(reasons, fmt.Sprintf("%d case(s) at blocking severity %v", blocking, sorted))
+	case score >= cfg.BlockThreshold:
+		verdict = "block"
+		reasons = append(reasons, fmt.Sprintf("risk score %.2f >= block threshold %.2f", score, cfg.BlockThreshold))
+	case score >= cfg.WarnThreshold:
+		verdict = "warn"
+		reasons = append(reasons, fmt.Sprintf("risk score %.2f >= warn threshold %.2f", score, cfg.WarnThreshold))
+	default:
+		reasons = append(reasons, fmt.Sprintf("risk score %.2f below warn threshold %.2f", score, cfg.WarnThreshold))
+	}
+
+	if len(cases) == 0 {
+		reasons = []string{"no regression cases compiled; nothing to gate"}
+	}
+
+	return Summary{
+		Verdict:       verdict,
+		Score:         score,
+		TotalCases:    len(cases),
+		BlockingCases: blocking,
+		BySeverity:    bySeverity,
+		Reasons:       reasons,
+	}
+}
+
+<!-- draft note 1397 -->
