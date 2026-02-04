@@ -79,3 +79,26 @@ func main() {
 	}
 	if len(sevs) == 0 {
 		sevs = []string{"critical"}
+	}
+
+	cfg := gate.Config{BlockSeverities: sevs, WarnThreshold: *warn, BlockThreshold: *block}
+	summary := gate.Evaluate(cases, cfg)
+
+	out, err := json.MarshalIndent(summary, "", "  ")
+	if err != nil {
+		fmt.Fprintln(os.Stderr, "encode error:", err)
+		os.Exit(2)
+	}
+	fmt.Println(string(out))
+
+	switch summary.Verdict {
+	case "warn":
+		os.Exit(10)
+	case "block":
+		os.Exit(20)
+	default:
+		os.Exit(0)
+	}
+}
+
+<!-- draft note 1401 -->
