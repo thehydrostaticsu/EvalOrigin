@@ -27,3 +27,13 @@
   <!-- gate: a bordered square that draws its check to signal a pass verdict -->
   <g transform="translate(320 58)">
     <rect x="0" y="0" width="82" height="82" rx="10" fill="none" stroke="#ffb347" stroke-width="4"/>
+    <path d="M18 42 L35 60 L66 22" fill="none" stroke="#3fbf7f" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+      <animate attributeName="stroke-dasharray" values="0 96;96 0" dur="2.6s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <text x="40" y="178" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" fill="#ffb347">EvalOrigin</text>
+  <text x="188" y="178" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#c9c9cf">trace to evaluation</text>
+</svg>
+
+<!-- draft note 1402 -->
