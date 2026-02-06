@@ -193,3 +193,6 @@ def compile_pack(
         rubrics=rubrics,
         fixtures=fixtures,
         gate=gate,
+    )
+
+# draft note 1404
