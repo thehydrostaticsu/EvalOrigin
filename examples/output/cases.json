@@ -75,3 +75,22 @@
     "expect": {
       "bytes": 20480
     },
+    "origin": "golden-path",
+    "severity": "medium",
+    "steps": 2
+  },
+  {
+    "case_id": "case-be38b325e33b",
+    "entrypoint": "search.query",
+    "given": {
+      "alias": "products"
+    },
+    "expect": {
+      "hits": 12,
+      "generation": 8
+    },
+    "origin": "incident:INC-1877",
+    "severity": "medium",
+    "steps": 2
+  }
+]
