@@ -87,3 +87,5 @@
 | fx-85e75f061c69 | case-950e718d20af | etl.transform |
 | fx-8b1aaf3c77b0 | case-bdaeb8c13845 | etl.transform |
 | fx-8f4b7328381b | case-830a112dd507 | checkout.total |
+| fx-8fe7db1fe160 | case-de5cb01f3874 | report.render |
+
