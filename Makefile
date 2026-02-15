@@ -44,3 +44,11 @@ go-build:
 	cd compiler && go build ./...
 
 go-vet:
+	cd compiler && go vet ./...
+
+check:
+	$(PY) -m compileall -q EvalOrigin
+	cd compiler && go vet ./... && go build ./...
+
+clean:
+	rm -rf $(OUT)/pack.json $(OUT)/report.md $(OUT)/cases.json $(OUT)/rubrics.json $(OUT)/fixtures.json
