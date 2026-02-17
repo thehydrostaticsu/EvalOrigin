@@ -69,5 +69,3 @@ def load_sources(paths: Iterable[str]) -> Tuple[List[Trace], List[Incident]]:
 def dumps_canonical(obj: object) -> str:
     """Serialize to canonical, deterministic JSON."""
     return json.dumps(obj, indent=2, sort_keys=False, ensure_ascii=False)
-
-# draft note 1392
