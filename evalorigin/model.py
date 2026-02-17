@@ -223,3 +223,35 @@ class GateSummary:
     by_severity: Dict[str, int]
     reasons: List[str] = field(default_factory=list)
 
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "verdict": self.verdict,
+            "score": round(self.score, 4),
+            "total_cases": self.total_cases,
+            "blocking_cases": self.blocking_cases,
+            "by_severity": dict(sorted(self.by_severity.items())),
+            "reasons": list(self.reasons),
+        }
+
+
+@dataclass(frozen=True)
+class Pack:
+    """A complete compiled evaluation pack."""
+
+    pack_id: str
+    entrypoints: List[str]
+    cases: List[RegressionCase]
+    rubrics: List[Rubric]
+    fixtures: List[Fixture]
+    gate: GateSummary
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "pack_id": self.pack_id,
+            "schema": "evalorigin/pack/v1",
+            "entrypoints": sorted(self.entrypoints),
+            "cases": [c.to_dict() for c in self.cases],
+            "rubrics": [r.to_dict() for r in self.rubrics],
+            "fixtures": [f.to_dict() for f in self.fixtures],
+            "gate": self.gate.to_dict(),
+        }
