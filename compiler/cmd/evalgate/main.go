@@ -100,5 +100,3 @@ func main() {
 		os.Exit(0)
 	}
 }
-
-<!-- draft note 1401 -->
