@@ -194,5 +194,3 @@ def compile_pack(
         fixtures=fixtures,
         gate=gate,
     )
-
-# draft note 1404
