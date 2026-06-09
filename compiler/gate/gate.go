@@ -124,5 +124,3 @@ func Evaluate(cases []Case, cfg Config) Summary {
 		Reasons:       reasons,
 	}
 }
-
-<!-- draft note 1410 -->
