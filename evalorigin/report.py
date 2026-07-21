@@ -110,5 +110,3 @@ def render_pack(pack: Pack) -> str:
     lines.append("")
 
     return "\n".join(lines) + "\n"
-
-# draft note 1415
