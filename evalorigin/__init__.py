@@ -31,3 +31,13 @@ __all__ = [
     "Rubric",
     "RubricCriterion",
     "Fixture",
+    "GateSummary",
+    "Pack",
+    "compile_pack",
+    "compile_cases",
+    "compile_rubric",
+    "evaluate_gate",
+    "GateConfig",
+]
+
+__version__ = "1.0.2"
