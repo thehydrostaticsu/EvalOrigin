@@ -133,3 +133,30 @@ def main(argv: Optional[List[str]] = None) -> int:
             rubrics = [r for r in rubrics if r.entrypoint == args.entrypoint]
         _write(dumps_canonical([r.to_dict() for r in rubrics]), args.out)
         return 0
+
+    if args.command == "fixtures":
+        pack = compile_pack(traces, incidents, args.name)
+        _write(dumps_canonical([f.to_dict() for f in pack.fixtures]), args.out)
+        return 0
+
+    gate_config = _build_gate_config(args)
+    pack = compile_pack(traces, incidents, args.name, gate_config)
+
+    if args.command == "compile":
+        _write(dumps_canonical(pack.to_dict()), args.out)
+        return 0
+
+    if args.command == "report":
+        _write(render_pack(pack), args.out)
+        return 0
+
+    if args.command == "gate":
+        _write(dumps_canonical(pack.gate.to_dict()), args.out)
+        return _GATE_EXIT.get(pack.gate.verdict, 0)
+
+    parser.error(f"unknown command: {args.command}")
+    return 2
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
