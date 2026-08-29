@@ -66,5 +66,3 @@
 
   <text x="380" y="284" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#6b6b72" text-anchor="middle">deterministic: same inputs compile to a byte-identical pack</text>
 </svg>
-
-<!-- draft note 1416 -->
