@@ -13,3 +13,6 @@ track the shape of the compiler and its companion runner.
 ## Exploring
 
 - Multi-pack diffing to surface newly introduced or resolved regressions.
+- Rubric templates keyed by entrypoint family for shared scoring conventions.
+- Trace redaction profiles for sensitive payload fields at load time.
+- HTML report theme built from the amber/charcoal identity.
