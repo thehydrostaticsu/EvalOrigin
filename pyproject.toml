@@ -28,5 +28,3 @@ Source = "https://example.invalid/evalorigin"
 
 [tool.setuptools]
 packages = ["evalorigin"]
-
-<!-- draft note 1411 -->
