@@ -14,3 +14,8 @@ jobs:
           python-version: "3.11"
       - name: Python package
         run: python -m compileall -q evalorigin && python -m evalorigin --version
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.22"
+      - name: Go compiler
+        run: cd compiler && go build ./...
