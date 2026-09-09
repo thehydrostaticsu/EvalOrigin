@@ -85,5 +85,3 @@ a Changelog, and the project uses semantic versioning.
 ### Added
 
 - Initial trace and incident loaders with the case model.
-
-<!-- draft note 1400 -->
