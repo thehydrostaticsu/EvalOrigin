@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Palette reason: a trace resolving into a gate. Charcoal base #0d1117 carries
+  the structural text; amber #ffb347 is the trace and the failing input, the
+  first thing the reader sees; check green #4ec38a is the gate outcome. Greys
+  are neutrals only. Contrast on #0d1117: ink 14.6:1, amber 10.1:1, green 8.4:1,
+  muted 6.3:1.
+  Grid: every edge and baseline on a multiple of 4. No glow, no blur, no
+  gradients as decoration. Motion: none.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 360" role="img"
+     aria-labelledby="bannerTitle bannerDesc" width="1400" height="360">
+  <title id="bannerTitle">EvalOrigin banner</title>
+  <desc id="bannerDesc">EvalOrigin, a trace-to-evaluation compiler. A jagged
+    execution trace resolves into a gate with a check, beside the compiled pack
+    contents and a passing gate line.</desc>
+
+  <rect x="0" y="0" width="1400" height="360" rx="16" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
+
+  <text x="64" y="96" font-family="-apple-system, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif" font-size="60" font-weight="700"><tspan fill="#e6edf3">eval</tspan><tspan fill="#ffb347">origin</tspan></text>
+
+  <text x="64" y="146" font-family="-apple-system, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif" font-size="23" fill="#e6edf3">Turn failures and execution traces into release gates</text>
+  <text x="64" y="176" font-family="-apple-system, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif" font-size="16" fill="#8b949e">Cases. Rubrics. Fixtures. A gate that runs in CI.</text>
+
+  <text x="64" y="252" font-family="&quot;Cascadia Mono&quot;, Consolas, monospace" font-size="15" fill="#8b949e">v1.0.2</text>
+  <text x="150" y="252" font-family="&quot;Cascadia Mono&quot;, Consolas, monospace" font-size="15" fill="#8b949e">MIT</text>
+  <text x="210" y="252" font-family="&quot;Cascadia Mono&quot;, Consolas, monospace" font-size="15" fill="#8b949e">Python + Go</text>
+
+  <text x="64" y="308" font-family="&quot;Cascadia Mono&quot;, Consolas, monospace" font-size="16" fill="#4ec38a">gate: pass (exit 0), 14 cases</text>
+
+  <rect x="700" y="56" width="636" height="248" rx="12" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <text x="732" y="96" font-family="&quot;Cascadia Mono&quot;, Consolas, monospace" font-size="16" fill="#8b949e">pack/</text>
+  <line x1="732" y1="112" x2="1304" y2="112" stroke="#30363d" stroke-width="1"/>
+
+  <polyline points="740,180 800,140 860,200 920,150 980,184" fill="none" stroke="#ffb347" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="740" cy="180" r="6" fill="#ffb347"/>
+  <circle cx="800" cy="140" r="5" fill="#ffb347"/>
+  <circle cx="860" cy="200" r="5" fill="#ffb347"/>
+  <circle cx="920" cy="150" r="5" fill="#ffb347"/>
+  <circle cx="980" cy="184" r="5" fill="#ffb347"/>
+  <line x1="996" y1="184" x2="1040" y2="184" stroke="#8b949e" stroke-width="2"/>
+  <circle cx="1072" cy="184" r="26" fill="none" stroke="#4ec38a" stroke-width="2"/>
+  <polyline points="1060,184 1069,194 1086,172" fill="none" stroke="#4ec38a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <text x="1132" y="172" font-family="&quot;Cascadia Mono&quot;, Consolas, monospace" font-size="15" fill="#e6edf3">cases.json</text>
+  <text x="1132" y="200" font-family="&quot;Cascadia Mono&quot;, Consolas, monospace" font-size="15" fill="#e6edf3">rubrics.json</text>
+  <text x="1132" y="228" font-family="&quot;Cascadia Mono&quot;, Consolas, monospace" font-size="15" fill="#e6edf3">fixtures.json</text>
+  <text x="1132" y="256" font-family="&quot;Cascadia Mono&quot;, Consolas, monospace" font-size="15" fill="#8b949e">report.md</text>
+</svg>

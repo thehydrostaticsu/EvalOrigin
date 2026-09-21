@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/assets/logo.svg" alt="EvalOrigin: a trace collapsing into an evaluation gate" width="440">
+  <img src="docs/assets/banner.svg" width="100%" alt="EvalOrigin banner: a jagged execution trace resolving into a gate with a check, beside the compiled pack contents." />
 </p>
 
 # EvalOrigin
