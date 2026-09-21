@@ -8,6 +8,7 @@ a Changelog, and the project uses semantic versioning.
 ### Changed
 
 - Gate wording is under review for the next patch.
+- A per-class rubric summary is being sketched.
 
 ## [1.0.2] - 2026-07-07
 
